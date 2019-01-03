@@ -9,6 +9,7 @@
 01-02-2019 14:54 PST
 
 ### Documentation
+- fix(docs): require stmt (#29)
 - add missing namespaces ([#27](https://github.com/googleapis/nodejs-security-center/pull/27))
 - fix(docs): fix require module in samples ([#26](https://github.com/googleapis/nodejs-security-center/pull/26))
 
