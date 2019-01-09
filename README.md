@@ -34,6 +34,7 @@
 ```javascript
 // Imports the Google Cloud client library
 const sc = require('@google-cloud/securitycenter');
+console.log(sc);
 ```
 
 
@@ -74,11 +75,10 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 
 [explained]: https://cloud.google.com/apis/docs/client-libraries-explained
 
-[client-docs]: https://cloud.google.com/nodejs/docs/reference/securitycenter/latest/
+[client-docs]: https://cloud.google.com/nodejs/docs/reference/security-center/latest/
 [product-docs]: https://cloud.google.com/security-center/docs/
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 [projects]: https://console.cloud.google.com/project
 [billing]: https://support.google.com/cloud/answer/6293499#enable-billing
 [enable_api]: https://console.cloud.google.com/flows/enableapi?apiid=
 [auth]: https://cloud.google.com/docs/authentication/getting-started
-
