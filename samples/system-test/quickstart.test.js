@@ -27,5 +27,5 @@ it.skip('should run the quickstart', async () => {
     `node quickstart ${organization}`
   );
 
-  console.log(stdout);
+  assert.match(stdout, /Source created\./);
 });

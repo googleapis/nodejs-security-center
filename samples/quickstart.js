@@ -33,6 +33,7 @@ async function quickstart(
 
   const [source] = await client.createSource(request);
   // The newly created source.
+  console.log('Source created.');
   console.log(source);
 }
 // [END securitycenter_quickstart]
