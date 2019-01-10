@@ -17,7 +17,7 @@
 
 // [START securitycenter_quickstart]
 async function quickstart(
-  organization = 'YOUR_ORGANIZATION', // Your GCP organization
+  organization = 'YOUR_ORGANIZATION' // Your GCP organization
 ) {
   const sc = require('@google-cloud/security-center');
 

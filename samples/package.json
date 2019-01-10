@@ -2,6 +2,9 @@
   "name": "nodejs-security-center-samples",
   "main": "quickstart.js",
   "private": true,
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "test": "mocha system-test"
   },
