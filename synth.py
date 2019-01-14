@@ -31,6 +31,10 @@ common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library()
 s.copy(templates)
 
+s.replace('src/v1beta1/doc/google/cloud/securitycenter/v1beta1/doc_source.js',
+        r"\[\\p\{L\}\\p\{N\}\]\(https:\/\/cloud\.google\.com\{\\p\{L\}\\p\{N\}_- \]\{0\,30\}\[\\p\{L\}\\p\{N\}\]\)\?",
+        r"`\[\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?`")
+
 # [START fix-dead-link]
 s.replace('**/doc/google/protobuf/doc_timestamp.js',
         'https:\/\/cloud\.google\.com[\s\*]*http:\/\/(.*)[\s\*]*\)',
