@@ -24,6 +24,18 @@
 /**
  * @namespace google.cloud.securitycenter.v1beta1
  */
+/**
+ * @namespace google.iam.v1
+ */
+/**
+ * @namespace google.protobuf
+ */
+/**
+ * @namespace google.longrunning
+ */
+/**
+ * @namespace google.rpc
+ */
 
 'use strict';
 
@@ -42,14 +54,14 @@ const gapic = Object.freeze({
  *     - `SecurityCenterClient` - Reference to
  *       {@link v1beta1.SecurityCenterClient}
  *
- * @module {object} @google-cloud/securitycenter
+ * @module {object} @google-cloud/security-center
  * @alias nodejs-securitycenter
  *
  * @example <caption>Install the client library with <a href="https://www.npmjs.com/">npm</a>:</caption>
- * npm install --save securitycenter
+ * npm install --save @google-cloud/security-center
  *
  * @example <caption>Import the client library:</caption>
- * const securitycenter = require('securitycenter');
+ * const securitycenter = require('@google-cloud/security-center');
  *
  * @example <caption>Create a client that uses <a href="https://goo.gl/64dyYX">Application Default Credentials (ADC)</a>:</caption>
  * const client = new securitycenter.SecurityCenterClient();
