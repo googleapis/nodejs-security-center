@@ -33,7 +33,7 @@
  *   The display name must start and end with a letter or digit, may contain
  *   letters, digits, spaces, hyphens, and underscores, and can be no longer
  *   than 32 characters. This is captured by the regular expression:
- *   [\p{L}\p{N}](https://cloud.google.com{\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+ *   `\[\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?`.
  *
  * @property {string} description
  *   The description of the source (max of 1024 characters).
