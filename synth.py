@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Run the gapic generator
 gapic = gcp.GAPICGenerator()
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 for version in versions:
     library = gapic.node_library('securitycenter', version)
     s.copy(library, excludes=['src/index.js', 'README.md', 'package.json'])
