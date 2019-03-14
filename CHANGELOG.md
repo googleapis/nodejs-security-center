@@ -8,7 +8,7 @@
 
 03-14-2019 07:55 PDT
 
-**This release has breaking changes!**.  The `having` enum value from `GroupFindingsRequest` has been removed.  This field was not supposed to be exposed.
+**This release has breaking changes!** The `having` enum value from `GroupFindingsRequest` has been removed.  This field was not supposed to be exposed.
 
 ### Bug Fixes
 - fix: remove the `having` enum value from `GroupFindingsRequest` ([#67](https://github.com/googleapis/nodejs-security-center/pull/67))
