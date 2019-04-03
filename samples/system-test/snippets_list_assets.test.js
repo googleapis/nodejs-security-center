@@ -29,19 +29,25 @@ it('should provide a count of assets', async () => {
 });
 
 it('returns count of projects', async () => {
-  const count = await assets.listWithFilters(organization_id);
+  if (organization_id) {
+    const count = await assets.listWithFilters(organization_id);
 
-  assert.equal(3, count);
+    assert.equal(3, count);
+  }
 });
 
 it('with date time returns number of projects', async () => {
-  const count = await assets.listAssetsWithFilterAndReadTime(organization_id);
+  if (organization_id) {
+    const count = await assets.listAssetsWithFilterAndReadTime(organization_id);
 
-  assert.equal(3, count);
+    assert.equal(3, count);
+  }
 });
 
 it('with date time and status changes', async () => {
-  const count = await assets.listAssetsAndStateChanges(organization_id);
+  if (organization_id) {
+    const count = await assets.listAssetsAndStateChanges(organization_id);
 
-  assert.equal(3, count);
+    assert.equal(3, count);
+  }
 });
