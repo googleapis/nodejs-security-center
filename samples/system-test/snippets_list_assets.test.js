@@ -23,9 +23,11 @@ const organization_id = process.env['GCLOUD_ORGANIZATION'];
 const assets = require('../snippets_list_assets.js');
 
 it('should provide a count of assets', async () => {
-  const count = await assets.listAllAssets(organization_id);
+  if (organization_id) {
+    const count = await assets.listAllAssets(organization_id);
 
-  assert.isAtLeast(count, 59);
+    assert.isAtLeast(count, 59);
+  }
 });
 
 it('returns count of projects', async () => {
