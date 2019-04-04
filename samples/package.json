@@ -5,20 +5,18 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "mocha system-test/*.js --timeout 6000000",
+    "test": "mocha system-test/ --recursive --timeout 6000000",
     "check": "gts check",
     "clean": "gts clean",
     "fix": "gts fix"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@google-cloud/security-center": "^0.3.0",
-    "gts": "^0.9.0"
+    "@google-cloud/security-center": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "execa": "^1.0.0",
-    "mocha": "^6.0.2",
-    "gts": "^0.9.0"
+    "mocha": "^6.0.2"
   }
 }
