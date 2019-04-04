@@ -40,24 +40,26 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
       parent: orgName,
       compareDuration: {seconds: 30 * /*Second in Day=*/ 86400, nanos: 0},
       filter:
-          'security_center_properties.resource_type="google.cloud.resourcemanager.Project"',
+        'security_center_properties.resource_type="google.cloud.resourcemanager.Project"',
       // readTime must be in the form of a google.protobuf.Timestamp object
       // which takes seconds and nanoseconds.
       readTime: {
         seconds: Math.floor(oneDayAgo.getTime() / 1000),
         nanos: (oneDayAgo.getTime() % 1000) * 1e6,
-      }
-
-    })
-    var count = 0;
-    Array.from(response).forEach(
-        result => console.log(`${++count} ${result.asset.name} ${
-            result.asset.securityCenterProperties.resourceName}`));
+      },
+    });
+    let count = 0;
+    Array.from(response).forEach(result =>
+      console.log(
+        `${++count} ${result.asset.name} ${
+          result.asset.securityCenterProperties.resourceName
+        }`
+      )
+    );
   }
 
   listAssetsAtTime();
   // [END demo]
 }
-
 
 main(...process.argv.slice(2));

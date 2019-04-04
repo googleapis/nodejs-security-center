@@ -37,18 +37,20 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
       parent: orgName,
       compareDuration: {seconds: 30 * /*Second in Day=*/ 86400, nanos: 0},
       filter:
-          'security_center_properties.resource_type="google.cloud.resourcemanager.Project"'
-    })
-    var count = 0;
-    Array.from(response).forEach(
-        result => console.log(`${++count} ${result.asset.name} ${
-            result.asset.securityCenterProperties.resourceName} ${
-            result.stateChange}`));
+        'security_center_properties.resource_type="google.cloud.resourcemanager.Project"',
+    });
+    let count = 0;
+    Array.from(response).forEach(result =>
+      console.log(
+        `${++count} ${result.asset.name} ${
+          result.asset.securityCenterProperties.resourceName
+        } ${result.stateChange}`
+      )
+    );
   }
 
   listFilteredAssets();
   // [END demo]
 }
-
 
 main(...process.argv.slice(2));

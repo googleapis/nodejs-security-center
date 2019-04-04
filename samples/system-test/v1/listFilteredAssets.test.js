@@ -22,8 +22,9 @@ const organization_id = process.env['GCLOUD_ORGANIZATION'];
 if (organization_id) {
   describe('listAllAssets', () => {
     it('should print all assets in org', async () => {
-      const output =
-          await exec(`node v1/listFilteredAssets.js ${organization_id}`);
+      const output = await exec(
+        `node v1/listFilteredAssets.js ${organization_id}`
+      );
       assert.isAtLeast(3, output.match(/\n/g).length + 1);
       assert.notMatch(output, /undefined/);
     });

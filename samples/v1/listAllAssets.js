@@ -30,16 +30,19 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
   const orgName = client.organizationPath(organizationId);
   // Call the API with automatic pagination.
   async function listAssets() {
-    const [response] = await client.listAssets({parent: orgName})
-    var count = 0;
-    Array.from(response).forEach(
-        result => console.log(`${++count} ${result.asset.name} ${
-            result.asset.securityCenterProperties.resourceName}`));
+    const [response] = await client.listAssets({parent: orgName});
+    let count = 0;
+    Array.from(response).forEach(result =>
+      console.log(
+        `${++count} ${result.asset.name} ${
+          result.asset.securityCenterProperties.resourceName
+        }`
+      )
+    );
   }
 
   listAssets();
   // [END demo]
 }
-
 
 main(...process.argv.slice(2));

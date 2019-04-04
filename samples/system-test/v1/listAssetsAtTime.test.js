@@ -21,8 +21,9 @@ const organization_id = process.env['GCLOUD_ORGANIZATION'];
 if (organization_id) {
   describe('listAssetsAttime', () => {
     it('should print projects', async () => {
-      const output =
-          await exec(`node v1/listAssetsAtTime.js ${organization_id}`);
+      const output = await exec(
+        `node v1/listAssetsAtTime.js ${organization_id}`
+      );
       assert.equal(3, output.match(/\n/g).length + 1, '== number of projects');
       assert.notMatch(output, /undefined/);
     });

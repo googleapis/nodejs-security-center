@@ -22,8 +22,9 @@ const organization_id = process.env['GCLOUD_ORGANIZATION'];
 if (organization_id) {
   describe('listAssetsandChanges', () => {
     it('should print projects with state changes', async () => {
-      const output =
-          await exec(`node v1/listAssetsAndChanges.js ${organization_id}`);
+      const output = await exec(
+        `node v1/listAssetsAndChanges.js ${organization_id}`
+      );
       assert.match(output, /(ADDED|ACTIVE)/);
       assert.equal(3, output.match(/\n/g).length + 1, '== number of projects');
       assert.notMatch(output, /undefined/);
