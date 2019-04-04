@@ -16,13 +16,13 @@
 'use strict';
 
 const {assert} = require('chai');
-const execa = require('execa');
+const {execSync} = require('child_process');
 const organization = process.env['GCLOUD_ORGANIZATION'];
 
 // Skipped because createSource requires special permissions only
 // grantable on the organization level.
 it.skip('should run the quickstart', async () => {
-  const {stdout} = await execa.shell(`node quickstart ${organization}`);
+  const stdout = execSync(`node quickstart ${organization}`);
 
   assert.match(stdout, /Source created\./);
 });
