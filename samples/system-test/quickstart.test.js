@@ -16,16 +16,10 @@
 'use strict';
 
 const {assert} = require('chai');
-<<<<<<< HEAD
 const cp = require('child_process');
-=======
-const cp = require('child_process');
->>>>>>> master
+
 const organization = process.env['GCLOUD_ORGANIZATION'];
-
-const execSync = (cmd) => cp.execSync(cmd, {encoding: 'utf-8'});
-
-const execSync = (cmd) => cp.execSync(cmd, {encoding: 'utf-8'});
+const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 // Skipped because createSource requires special permissions only
 // grantable on the organization level.
