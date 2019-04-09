@@ -31,7 +31,7 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
     /*
      * TODO(developer): Uncomment the following lines
      */
-    // organizaionId = "111122222444"
+    // const organizaionId = "111122222444";
     const orgName = client.organizationPath(organizationId);
     const [settings] = await client.getOrganizationSettings({
       name: `${orgName}/organizationSettings`,

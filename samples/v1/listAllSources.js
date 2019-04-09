@@ -26,7 +26,7 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // organizaionId = "111122222444"
+  // const organizaionId = "111122222444";
   const orgName = client.organizationPath(organizationId);
   // Call the API with automatic pagination.
   async function listSources() {

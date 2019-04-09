@@ -29,7 +29,8 @@ function main(findingName = 'FULL_FINDING_PATH') {
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // findingName := "organizations/111122222444/sources/1234/findings/findingid"
+  // const findingName =
+  // "organizations/111122222444/sources/1234/findings/findingid";
 
   // Use now as the eventTime for the security finding.
   const eventTime = new Date();

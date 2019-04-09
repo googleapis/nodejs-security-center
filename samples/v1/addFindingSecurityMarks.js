@@ -30,7 +30,8 @@ function main(findingName = 'full finding path to add marks to') {
     /*
      * TODO(developer): Uncomment the following lines
      */
-    // findingName = "organizations/123123342/sources/1213/findings/findingid"
+    // const findingName =
+    // "organizations/123123342/sources/1213/findings/findingid";
     const [newMarks] = await client.updateSecurityMarks({
       securityMarks: {
         name: `${findingName}/securityMarks`,

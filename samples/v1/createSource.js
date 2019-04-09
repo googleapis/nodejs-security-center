@@ -16,7 +16,6 @@
 
 /**
  * createSource demonstrates how to create a new security finding source.
- * organizationId is numeric organization identifier.
  */
 function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
   // [START demo]
@@ -25,10 +24,11 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
 
   // Creates a new client.
   const client = new SecurityCenterClient();
+  // organizationId is numeric organization identifier.
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // organizationId = "1234567777"
+  // const organizationId = "1234567777";
   async function createSource() {
     const [source] = await client.createSource({
       source: {

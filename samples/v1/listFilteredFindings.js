@@ -27,7 +27,7 @@ function main(sourceName = 'YOUR_NUMERIC_ORG_ID') {
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // sourceName = "organizations/111122222444/sources/1234"
+  // const sourceName = "organizations/111122222444/sources/1234";
 
   async function listFilteredFindings() {
     const [response] = await client.listFindings({

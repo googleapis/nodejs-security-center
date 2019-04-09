@@ -27,7 +27,7 @@ function main(sourceName = 'FULL RESOURCE PATH TO PARENT SOURCE') {
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // sourceName = "organizations/111122222444/sources/1234"
+  // const sourceName = "organizations/111122222444/sources/1234";
 
   const fiveDaysAgo = new Date();
   fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);

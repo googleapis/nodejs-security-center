@@ -28,7 +28,7 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
   /*
    * TODO(developer): Uncomment the following lines
    */
-  // organizationId = "1234567777"
+  // const organizationId = "1234567777";
   const orgName = client.organizationPath(organizationId);
 
   const oneDayAgo = new Date();

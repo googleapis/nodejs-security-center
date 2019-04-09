@@ -35,8 +35,8 @@ function main(
     /*
      * TODO(developer): Uncomment the following lines
      */
-    // sourceName = "organizations/111122222444/sources/1234"
-    // user = "someuser@domain.com"
+    // const sourceName = "organizations/111122222444/sources/1234";
+    // const user = "someuser@domain.com";
     const [existingPolicy] = await client.getIamPolicy({
       resource: sourceName,
     });

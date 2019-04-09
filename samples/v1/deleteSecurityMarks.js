@@ -30,7 +30,7 @@ function main(assetName = 'full asset path to add marks to') {
     /*
      * TODO(developer): Uncomment the following lines
      */
-    // assetName = "organizations/123123342/assets/12312321"
+    // const assetName = "organizations/123123342/assets/12312321";
     const [newMarks] = await client.updateSecurityMarks({
       securityMarks: {
         name: `${assetName}/securityMarks`,
