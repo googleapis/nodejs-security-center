@@ -25,6 +25,5 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 // grantable on the organization level.
 it.skip('should run the quickstart', async () => {
   const stdout = execSync(`node quickstart ${organization}`);
-
   assert.match(stdout, /Source created\./);
 });
