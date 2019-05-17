@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,20 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -xeo pipefail
+set -eo pipefail
 
 export NPM_CONFIG_PREFIX=/home/node/.npm-global
 
-cd $(dirname $0)/..
+GITHUB_TOKEN=$(cat $KOKORO_KEYSTORE_DIR/73713_yoshi-automation-github-key)
 
-npm install
-
-# Install and link samples
-if [ -f samples/package.json ]; then
-  cd samples/
-  npm link ../
-  npm install
-  cd ..
-fi
-
-npm run lint
+npx release-please detect-checked --token=$GITHUB_TOKEN \
+  --repo-url=googleapis/nodejs-security-center \
+  --package-name=@google-cloud/security-center
