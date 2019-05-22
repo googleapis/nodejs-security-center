@@ -5,10 +5,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "mocha system-test/ --recursive --timeout 6000000",
-    "check": "gts check",
-    "clean": "gts clean",
-    "fix": "gts fix"
+    "test": "mocha system-test/ --recursive --timeout 6000000"
   },
   "license": "Apache-2.0",
   "dependencies": {

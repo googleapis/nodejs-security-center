@@ -21,8 +21,8 @@ const organizationId = process.env['GCLOUD_ORGANIZATION'];
 
 if (organizationId) {
   describe('client with security marks for assets', async () => {
-    let data = null;
-    before(async function() {
+    let data;
+    before(async () => {
       const {SecurityCenterClient} = require('@google-cloud/security-center');
 
       // Creates a new client.
