@@ -23,6 +23,24 @@ const error = new Error();
 error.code = FAKE_STATUS_CODE;
 
 describe('SecurityCenterClient', () => {
+  it('has servicePath', () => {
+    const servicePath =
+      securityCenterModule.v1beta1.SecurityCenterClient.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint =
+      securityCenterModule.v1beta1.SecurityCenterClient.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = securityCenterModule.v1beta1.SecurityCenterClient.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
   describe('createSource', () => {
     it('invokes createSource without error', done => {
       const client = new securityCenterModule.v1beta1.SecurityCenterClient({
