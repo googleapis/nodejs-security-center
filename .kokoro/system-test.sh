@@ -21,6 +21,7 @@ export NPM_CONFIG_PREFIX=/home/node/.npm-global
 # Setup service account credentials.
 export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_GFILE_DIR}/service-account.json
 export GCLOUD_PROJECT=long-door-651
+export GCLOUD_ORGANIZATION=1081635000895
 
 cd $(dirname $0)/..
 
