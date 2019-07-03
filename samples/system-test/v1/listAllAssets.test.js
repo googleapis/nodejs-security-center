@@ -19,12 +19,10 @@ const exec = async cmd => (await execa.shell(cmd)).stdout;
 
 const organization_id = process.env['GCLOUD_ORGANIZATION'];
 
-if (organization_id) {
-  describe('listAllAssets', () => {
-    it('should print all assets in org', async () => {
-      const output = await exec(`node v1/listAllAssets.js ${organization_id}`);
-      assert.isAtLeast(output.match(/\n/g).length + 1, 62);
-      assert.notMatch(output, /undefined/);
-    });
+describe('listAllAssets', () => {
+  it('should print all assets in org', async () => {
+    const output = await exec(`node v1/listAllAssets.js ${organization_id}`);
+    assert.isAtLeast(output.match(/\n/g).length + 1, 62);
+    assert.notMatch(output, /undefined/);
   });
-}
+});

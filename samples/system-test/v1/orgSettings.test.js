@@ -19,22 +19,20 @@ const exec = async cmd => (await execa.shell(cmd)).stdout;
 
 const organizationId = process.env['GCLOUD_ORGANIZATION'];
 
-if (organizationId) {
-  describe('client with organization settings', async () => {
-    it('client can enable asset discovery', async () => {
-      const output = await exec(
-        `node v1/enableAssetDiscovery.js ${organizationId}`
-      );
-      assert.match(output, new RegExp(organizationId));
-      assert.match(output, /true/);
-      assert.notMatch(output, /undefined/);
-    });
-
-    it('client can get organization settings', async () => {
-      const output = await exec(
-        `node v1/getOrganizationSettings.js ${organizationId}`
-      );
-      assert.match(output, new RegExp(organizationId));
-    });
+describe('client with organization settings', async () => {
+  it('client can enable asset discovery', async () => {
+    const output = await exec(
+      `node v1/enableAssetDiscovery.js ${organizationId}`
+    );
+    assert.match(output, new RegExp(organizationId));
+    assert.match(output, /true/);
+    assert.notMatch(output, /undefined/);
   });
-}
+
+  it('client can get organization settings', async () => {
+    const output = await exec(
+      `node v1/getOrganizationSettings.js ${organizationId}`
+    );
+    assert.match(output, new RegExp(organizationId));
+  });
+});
