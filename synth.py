@@ -47,6 +47,27 @@ r"""
 /**
  * @namespace google.type
  */
+/**
+ * @namespace google.longrunning
+ */
+/**
+ * @namespace google.protobuf
+ */
+/**
+ * @namespace google.type
+ */
+/**
+ * @namespace google.rpc
+ */
+/**
+ * @namespace google.cloud.securitycenter.v1
+ */
+/**
+ * @namespace google.cloud.securitycenter.v1beta1
+ */
+/**
+ * @namespace google.iam.v1
+ */
 """)
 
 # [START fix-dead-link]
