@@ -15,7 +15,7 @@
 
 const {assert} = require('chai');
 const execa = require('execa');
-const exec = async cmd => (await execa.shell(cmd)).stdout;
+const exec = async cmd => (await execa(cmd, {shell: true})).stdout;
 
 const organizationId = process.env['GCLOUD_ORGANIZATION'];
 
