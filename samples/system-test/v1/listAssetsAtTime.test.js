@@ -1,5 +1,5 @@
 /*
- * Copyright 2019, Google, LLC.
+ * Copyright 2019, Google LLC.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 const {assert} = require('chai');
-const execa = require('execa');
-const exec = async cmd => (await execa.shell(cmd)).stdout;
+const {execSync} = require('child_process');
+const exec = cmd => execSync(cmd, {encoding: 'utf8'});
 
 const organization_id = process.env['GCLOUD_ORGANIZATION'];
 
 describe('listAssetsAttime', () => {
-  it('should print projects', async () => {
-    const output = await exec(`node v1/listAssetsAtTime.js ${organization_id}`);
+  it('should print projects', () => {
+    const output = exec(`node v1/listAssetsAtTime.js ${organization_id}`);
     assert.equal(3, output.match(/\n/g).length + 1, '== number of projects');
     assert.notMatch(output, /undefined/);
   });

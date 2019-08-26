@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, Google, LLC.
+ * Copyright 2019, Google LLC.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 // Skipped because createSource requires special permissions only
 // grantable on the organization level.
-it.skip('should run the quickstart', async () => {
+it.skip('should run the quickstart', () => {
   const stdout = execSync(`node quickstart ${organization}`);
   assert.match(stdout, /Source created\./);
 });

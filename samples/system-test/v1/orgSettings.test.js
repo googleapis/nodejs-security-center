@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2019, Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,25 +14,21 @@
 'use strict';
 
 const {assert} = require('chai');
-const execa = require('execa');
-const exec = async cmd => (await execa.shell(cmd)).stdout;
+const {execSync} = require('child_process');
+const exec = cmd => execSync(cmd, {encoding: 'utf8'});
 
 const organizationId = process.env['GCLOUD_ORGANIZATION'];
 
-describe('client with organization settings', async () => {
-  it('client can enable asset discovery', async () => {
-    const output = await exec(
-      `node v1/enableAssetDiscovery.js ${organizationId}`
-    );
+describe('client with organization settings', () => {
+  it('client can enable asset discovery', () => {
+    const output = exec(`node v1/enableAssetDiscovery.js ${organizationId}`);
     assert.match(output, new RegExp(organizationId));
     assert.match(output, /true/);
     assert.notMatch(output, /undefined/);
   });
 
-  it('client can get organization settings', async () => {
-    const output = await exec(
-      `node v1/getOrganizationSettings.js ${organizationId}`
-    );
+  it('client can get organization settings', () => {
+    const output = exec(`node v1/getOrganizationSettings.js ${organizationId}`);
     assert.match(output, new RegExp(organizationId));
   });
 });
