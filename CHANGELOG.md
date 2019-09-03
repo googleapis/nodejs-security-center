@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/security-center?activeTab=versions
 
+### [2.0.2](https://www.github.com/googleapis/nodejs-security-center/compare/v2.0.1...v2.0.2) (2019-09-03)
+
+
+### Bug Fixes
+
+* include the correct version of node in a header ([#138](https://www.github.com/googleapis/nodejs-security-center/issues/138)) ([4b42390](https://www.github.com/googleapis/nodejs-security-center/commit/4b42390))
+
 ### [2.0.1](https://www.github.com/googleapis/nodejs-security-center/compare/v2.0.0...v2.0.1) (2019-08-05)
 
 
