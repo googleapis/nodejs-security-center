@@ -24,14 +24,12 @@ error.code = FAKE_STATUS_CODE;
 
 describe('SecurityCenterClient', () => {
   it('has servicePath', () => {
-    const servicePath =
-      securityCenterModule.v1.SecurityCenterClient.servicePath;
+    const servicePath = securityCenterModule.v1.SecurityCenterClient.servicePath;
     assert(servicePath);
   });
 
   it('has apiEndpoint', () => {
-    const apiEndpoint =
-      securityCenterModule.v1.SecurityCenterClient.apiEndpoint;
+    const apiEndpoint = securityCenterModule.v1.SecurityCenterClient.apiEndpoint;
     assert(apiEndpoint);
   });
 
@@ -47,9 +45,7 @@ describe('SecurityCenterClient', () => {
   });
 
   it('should create a client with gRPC fallback', () => {
-    const client = new securityCenterModule.v1.SecurityCenterClient({
-      fallback: true,
-    });
+    const client = new securityCenterModule.v1.SecurityCenterClient({fallback: true});
     assert(client);
   });
 
@@ -412,11 +408,7 @@ describe('SecurityCenterClient', () => {
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.groupAssets = (
-        actualRequest,
-        options,
-        callback
-      ) => {
+      client._innerApiCalls.groupAssets = (actualRequest, options, callback) => {
         assert.deepStrictEqual(actualRequest, request);
         callback(null, expectedResponse.groupByResults);
       };
@@ -485,11 +477,7 @@ describe('SecurityCenterClient', () => {
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.groupFindings = (
-        actualRequest,
-        options,
-        callback
-      ) => {
+      client._innerApiCalls.groupFindings = (actualRequest, options, callback) => {
         assert.deepStrictEqual(actualRequest, request);
         callback(null, expectedResponse.groupByResults);
       };
@@ -621,11 +609,7 @@ describe('SecurityCenterClient', () => {
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.listFindings = (
-        actualRequest,
-        options,
-        callback
-      ) => {
+      client._innerApiCalls.listFindings = (actualRequest, options, callback) => {
         assert.deepStrictEqual(actualRequest, request);
         callback(null, expectedResponse.listFindingsResults);
       };
@@ -688,11 +672,7 @@ describe('SecurityCenterClient', () => {
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.listSources = (
-        actualRequest,
-        options,
-        callback
-      ) => {
+      client._innerApiCalls.listSources = (actualRequest, options, callback) => {
         assert.deepStrictEqual(actualRequest, request);
         callback(null, expectedResponse.sources);
       };
@@ -749,24 +729,17 @@ describe('SecurityCenterClient', () => {
       const expectedResponse = {};
 
       // Mock Grpc layer
-      client._innerApiCalls.runAssetDiscovery = mockLongRunningGrpcMethod(
-        request,
-        expectedResponse
-      );
+      client._innerApiCalls.runAssetDiscovery = mockLongRunningGrpcMethod(request, expectedResponse);
 
-      client
-        .runAssetDiscovery(request)
-        .then(responses => {
-          const operation = responses[0];
-          return operation.promise();
-        })
-        .then(responses => {
-          assert.deepStrictEqual(responses[0], expectedResponse);
-          done();
-        })
-        .catch(err => {
-          done(err);
-        });
+      client.runAssetDiscovery(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(responses => {
+        assert.deepStrictEqual(responses[0], expectedResponse);
+        done();
+      }).catch(err => {
+        done(err);
+      });
     });
 
     it('invokes runAssetDiscovery with error', done => {
@@ -782,26 +755,18 @@ describe('SecurityCenterClient', () => {
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.runAssetDiscovery = mockLongRunningGrpcMethod(
-        request,
-        null,
-        error
-      );
+      client._innerApiCalls.runAssetDiscovery = mockLongRunningGrpcMethod(request, null, error);
 
-      client
-        .runAssetDiscovery(request)
-        .then(responses => {
-          const operation = responses[0];
-          return operation.promise();
-        })
-        .then(() => {
-          assert.fail();
-        })
-        .catch(err => {
-          assert(err instanceof Error);
-          assert.strictEqual(err.code, FAKE_STATUS_CODE);
-          done();
-        });
+      client.runAssetDiscovery(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(() => {
+        assert.fail();
+      }).catch(err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
     });
 
     it('has longrunning decoder functions', () => {
@@ -809,14 +774,8 @@ describe('SecurityCenterClient', () => {
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
-      assert(
-        client._descriptors.longrunning.runAssetDiscovery
-          .responseDecoder instanceof Function
-      );
-      assert(
-        client._descriptors.longrunning.runAssetDiscovery
-          .metadataDecoder instanceof Function
-      );
+      assert(client._descriptors.longrunning.runAssetDiscovery.responseDecoder instanceof Function);
+      assert(client._descriptors.longrunning.runAssetDiscovery.metadataDecoder instanceof Function);
     });
   });
 
@@ -828,11 +787,7 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedName = client.findingPath(
-        '[ORGANIZATION]',
-        '[SOURCE]',
-        '[FINDING]'
-      );
+      const formattedName = client.findingPath('[ORGANIZATION]', '[SOURCE]', '[FINDING]');
       const state = 'STATE_UNSPECIFIED';
       const startTime = {};
       const request = {
@@ -875,11 +830,7 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedName = client.findingPath(
-        '[ORGANIZATION]',
-        '[SOURCE]',
-        '[FINDING]'
-      );
+      const formattedName = client.findingPath('[ORGANIZATION]', '[SOURCE]', '[FINDING]');
       const state = 'STATE_UNSPECIFIED';
       const startTime = {};
       const request = {
@@ -1284,6 +1235,7 @@ describe('SecurityCenterClient', () => {
       });
     });
   });
+
 });
 
 function mockSimpleGrpcMethod(expectedRequest, response, error) {
@@ -1307,11 +1259,12 @@ function mockLongRunningGrpcMethod(expectedRequest, response, error) {
         return new Promise((resolve, reject) => {
           if (error) {
             reject(error);
-          } else {
+          }
+          else {
             resolve([response]);
           }
         });
-      },
+      }
     };
     return Promise.resolve([mockOperation]);
   };
