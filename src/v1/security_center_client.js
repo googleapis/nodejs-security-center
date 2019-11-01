@@ -69,7 +69,9 @@ class SecurityCenterClient {
     const gaxModule = !global.isBrowser && opts.fallback ? gax.fallback : gax;
 
     const servicePath =
-      opts.servicePath || opts.apiEndpoint || this.constructor.servicePath;
+      opts.servicePath ||
+      opts.apiEndpoint ||
+      this.constructor.servicePath;
 
     // Ensure that options include the service address and port.
     opts = Object.assign(
@@ -110,15 +112,11 @@ class SecurityCenterClient {
     // For Node.js, pass the path to JSON proto file.
     // For browsers, pass the JSON content.
 
-    const nodejsProtoPath = path.join(
-      __dirname,
-      '..',
-      '..',
-      'protos',
-      'protos.json'
-    );
+    const nodejsProtoPath = path.join(__dirname, '..', '..', 'protos', 'protos.json');
     const protos = gaxGrpc.loadProto(
-      opts.fallback ? require('../../protos/protos.json') : nodejsProtoPath
+      opts.fallback ?
+        require("../../protos/protos.json") :
+        nodejsProtoPath
     );
 
     // This API contains "path templates"; forward-slash-separated
@@ -182,9 +180,9 @@ class SecurityCenterClient {
       ),
     };
 
-    const protoFilesRoot = opts.fallback
-      ? gaxModule.protobuf.Root.fromJSON(require('../../protos/protos.json'))
-      : gaxModule.protobuf.loadSync(nodejsProtoPath);
+    const protoFilesRoot = opts.fallback ?
+      gaxModule.protobuf.Root.fromJSON(require("../../protos/protos.json")) :
+      gaxModule.protobuf.loadSync(nodejsProtoPath);
 
     // This API contains "long-running operations", which return a
     // an Operation object that allows for tracking of the operation,
@@ -225,9 +223,9 @@ class SecurityCenterClient {
     // Put together the "service stub" for
     // google.cloud.securitycenter.v1.SecurityCenter.
     const securityCenterStub = gaxGrpc.createStub(
-      opts.fallback
-        ? protos.lookupService('google.cloud.securitycenter.v1.SecurityCenter')
-        : protos.google.cloud.securitycenter.v1.SecurityCenter,
+      opts.fallback ?
+        protos.lookupService('google.cloud.securitycenter.v1.SecurityCenter') :
+        protos.google.cloud.securitycenter.v1.SecurityCenter,
       opts
     );
 
@@ -265,8 +263,7 @@ class SecurityCenterClient {
       this._innerApiCalls[methodName] = gaxModule.createApiCall(
         innerCallPromise,
         defaults[methodName],
-        this._descriptors.page[methodName] ||
-          this._descriptors.longrunning[methodName]
+        this._descriptors.page[methodName] || this._descriptors.longrunning[methodName]
       );
     }
   }
@@ -298,7 +295,9 @@ class SecurityCenterClient {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -370,11 +369,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createSource(request, options, callback);
   }
@@ -442,11 +440,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createFinding(request, options, callback);
   }
@@ -502,11 +499,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.getIamPolicy(request, options, callback);
   }
@@ -557,17 +553,12 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
-    return this._innerApiCalls.getOrganizationSettings(
-      request,
-      options,
-      callback
-    );
+    return this._innerApiCalls.getOrganizationSettings(request, options, callback);
   }
 
   /**
@@ -616,11 +607,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.getSource(request, options, callback);
   }
@@ -835,11 +825,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.groupAssets(request, options, callback);
   }
@@ -1008,7 +997,7 @@ class SecurityCenterClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Filters an organization or source's findings and  groups them by their
@@ -1214,11 +1203,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.groupFindings(request, options, callback);
   }
@@ -1378,7 +1366,7 @@ class SecurityCenterClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Lists an organization's assets.
@@ -1588,11 +1576,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listAssets(request, options, callback);
   }
@@ -1765,7 +1752,7 @@ class SecurityCenterClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Lists an organization or source's findings.
@@ -1969,11 +1956,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listFindings(request, options, callback);
   }
@@ -2137,7 +2123,7 @@ class SecurityCenterClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Lists all sources belonging to an organization.
@@ -2233,11 +2219,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.listSources(request, options, callback);
   }
@@ -2296,7 +2281,7 @@ class SecurityCenterClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Runs asset discovery. The discovery is tracked with a long-running
@@ -2393,11 +2378,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.runAssetDiscovery(request, options, callback);
   }
@@ -2465,11 +2449,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.setFindingState(request, options, callback);
   }
@@ -2532,11 +2515,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.setIamPolicy(request, options, callback);
   }
@@ -2597,11 +2579,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      resource: request.resource,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
 
     return this._innerApiCalls.testIamPermissions(request, options, callback);
   }
@@ -2669,11 +2650,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'finding.name': request.finding.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'finding.name': request.finding.name
+      });
 
     return this._innerApiCalls.updateFinding(request, options, callback);
   }
@@ -2731,17 +2711,12 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'organization_settings.name': request.organizationSettings.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'organization_settings.name': request.organizationSettings.name
+      });
 
-    return this._innerApiCalls.updateOrganizationSettings(
-      request,
-      options,
-      callback
-    );
+    return this._innerApiCalls.updateOrganizationSettings(request, options, callback);
   }
 
   /**
@@ -2797,11 +2772,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'source.name': request.source.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'source.name': request.source.name
+      });
 
     return this._innerApiCalls.updateSource(request, options, callback);
   }
@@ -2867,11 +2841,10 @@ class SecurityCenterClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'security_marks.name': request.securityMarks.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'security_marks.name': request.securityMarks.name
+      });
 
     return this._innerApiCalls.updateSecurityMarks(request, options, callback);
   }
@@ -2998,7 +2971,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate.match(assetName).organization;
+    return this._pathTemplates.assetPathTemplate
+      .match(assetName)
+      .organization;
   }
 
   /**
@@ -3009,7 +2984,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the asset.
    */
   matchAssetFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate.match(assetName).asset;
+    return this._pathTemplates.assetPathTemplate
+      .match(assetName)
+      .asset;
   }
 
   /**
@@ -3020,9 +2997,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromAssetSecurityMarksName(assetSecurityMarksName) {
-    return this._pathTemplates.assetSecurityMarksPathTemplate.match(
-      assetSecurityMarksName
-    ).organization;
+    return this._pathTemplates.assetSecurityMarksPathTemplate
+      .match(assetSecurityMarksName)
+      .organization;
   }
 
   /**
@@ -3033,9 +3010,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the asset.
    */
   matchAssetFromAssetSecurityMarksName(assetSecurityMarksName) {
-    return this._pathTemplates.assetSecurityMarksPathTemplate.match(
-      assetSecurityMarksName
-    ).asset;
+    return this._pathTemplates.assetSecurityMarksPathTemplate
+      .match(assetSecurityMarksName)
+      .asset;
   }
 
   /**
@@ -3046,7 +3023,8 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromFindingName(findingName) {
-    return this._pathTemplates.findingPathTemplate.match(findingName)
+    return this._pathTemplates.findingPathTemplate
+      .match(findingName)
       .organization;
   }
 
@@ -3058,7 +3036,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the source.
    */
   matchSourceFromFindingName(findingName) {
-    return this._pathTemplates.findingPathTemplate.match(findingName).source;
+    return this._pathTemplates.findingPathTemplate
+      .match(findingName)
+      .source;
   }
 
   /**
@@ -3069,7 +3049,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the finding.
    */
   matchFindingFromFindingName(findingName) {
-    return this._pathTemplates.findingPathTemplate.match(findingName).finding;
+    return this._pathTemplates.findingPathTemplate
+      .match(findingName)
+      .finding;
   }
 
   /**
@@ -3080,9 +3062,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromFindingSecurityMarksName(findingSecurityMarksName) {
-    return this._pathTemplates.findingSecurityMarksPathTemplate.match(
-      findingSecurityMarksName
-    ).organization;
+    return this._pathTemplates.findingSecurityMarksPathTemplate
+      .match(findingSecurityMarksName)
+      .organization;
   }
 
   /**
@@ -3093,9 +3075,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the source.
    */
   matchSourceFromFindingSecurityMarksName(findingSecurityMarksName) {
-    return this._pathTemplates.findingSecurityMarksPathTemplate.match(
-      findingSecurityMarksName
-    ).source;
+    return this._pathTemplates.findingSecurityMarksPathTemplate
+      .match(findingSecurityMarksName)
+      .source;
   }
 
   /**
@@ -3106,9 +3088,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the finding.
    */
   matchFindingFromFindingSecurityMarksName(findingSecurityMarksName) {
-    return this._pathTemplates.findingSecurityMarksPathTemplate.match(
-      findingSecurityMarksName
-    ).finding;
+    return this._pathTemplates.findingSecurityMarksPathTemplate
+      .match(findingSecurityMarksName)
+      .finding;
   }
 
   /**
@@ -3119,7 +3101,8 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromOrganizationName(organizationName) {
-    return this._pathTemplates.organizationPathTemplate.match(organizationName)
+    return this._pathTemplates.organizationPathTemplate
+      .match(organizationName)
       .organization;
   }
 
@@ -3131,9 +3114,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromOrganizationSettingsName(organizationSettingsName) {
-    return this._pathTemplates.organizationSettingsPathTemplate.match(
-      organizationSettingsName
-    ).organization;
+    return this._pathTemplates.organizationSettingsPathTemplate
+      .match(organizationSettingsName)
+      .organization;
   }
 
   /**
@@ -3144,9 +3127,9 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromOrganizationSourcesName(organizationSourcesName) {
-    return this._pathTemplates.organizationSourcesPathTemplate.match(
-      organizationSourcesName
-    ).organization;
+    return this._pathTemplates.organizationSourcesPathTemplate
+      .match(organizationSourcesName)
+      .organization;
   }
 
   /**
@@ -3157,7 +3140,8 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the organization.
    */
   matchOrganizationFromSourceName(sourceName) {
-    return this._pathTemplates.sourcePathTemplate.match(sourceName)
+    return this._pathTemplates.sourcePathTemplate
+      .match(sourceName)
       .organization;
   }
 
@@ -3169,8 +3153,11 @@ class SecurityCenterClient {
    * @returns {String} - A string representing the source.
    */
   matchSourceFromSourceName(sourceName) {
-    return this._pathTemplates.sourcePathTemplate.match(sourceName).source;
+    return this._pathTemplates.sourcePathTemplate
+      .match(sourceName)
+      .source;
   }
 }
+
 
 module.exports = SecurityCenterClient;
