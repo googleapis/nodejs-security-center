@@ -4995,6 +4995,7 @@
                              * @interface IListFindingsResult
                              * @property {google.cloud.securitycenter.v1.IFinding|null} [finding] ListFindingsResult finding
                              * @property {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange|null} [stateChange] ListFindingsResult stateChange
+                             * @property {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource|null} [resource] ListFindingsResult resource
                              */
     
                             /**
@@ -5029,6 +5030,14 @@
                             ListFindingsResult.prototype.stateChange = 0;
     
                             /**
+                             * ListFindingsResult resource.
+                             * @member {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource|null|undefined} resource
+                             * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
+                             * @instance
+                             */
+                            ListFindingsResult.prototype.resource = null;
+    
+                            /**
                              * Creates a new ListFindingsResult instance using the specified properties.
                              * @function create
                              * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
@@ -5056,6 +5065,8 @@
                                     $root.google.cloud.securitycenter.v1.Finding.encode(message.finding, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                                 if (message.stateChange != null && message.hasOwnProperty("stateChange"))
                                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.stateChange);
+                                if (message.resource != null && message.hasOwnProperty("resource"))
+                                    $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.encode(message.resource, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                                 return writer;
                             };
     
@@ -5095,6 +5106,9 @@
                                         break;
                                     case 2:
                                         message.stateChange = reader.int32();
+                                        break;
+                                    case 3:
+                                        message.resource = $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.decode(reader, reader.uint32());
                                         break;
                                     default:
                                         reader.skipType(tag & 7);
@@ -5147,6 +5161,11 @@
                                     case 4:
                                         break;
                                     }
+                                if (message.resource != null && message.hasOwnProperty("resource")) {
+                                    var error = $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.verify(message.resource);
+                                    if (error)
+                                        return "resource." + error;
+                                }
                                 return null;
                             };
     
@@ -5189,6 +5208,11 @@
                                     message.stateChange = 4;
                                     break;
                                 }
+                                if (object.resource != null) {
+                                    if (typeof object.resource !== "object")
+                                        throw TypeError(".google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.resource: object expected");
+                                    message.resource = $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.fromObject(object.resource);
+                                }
                                 return message;
                             };
     
@@ -5208,11 +5232,14 @@
                                 if (options.defaults) {
                                     object.finding = null;
                                     object.stateChange = options.enums === String ? "UNUSED" : 0;
+                                    object.resource = null;
                                 }
                                 if (message.finding != null && message.hasOwnProperty("finding"))
                                     object.finding = $root.google.cloud.securitycenter.v1.Finding.toObject(message.finding, options);
                                 if (message.stateChange != null && message.hasOwnProperty("stateChange"))
                                     object.stateChange = options.enums === String ? $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange[message.stateChange] : message.stateChange;
+                                if (message.resource != null && message.hasOwnProperty("resource"))
+                                    object.resource = $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.toObject(message.resource, options);
                                 return object;
                             };
     
@@ -5226,6 +5253,282 @@
                             ListFindingsResult.prototype.toJSON = function toJSON() {
                                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
                             };
+    
+                            ListFindingsResult.Resource = (function() {
+    
+                                /**
+                                 * Properties of a Resource.
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
+                                 * @interface IResource
+                                 * @property {string|null} [name] Resource name
+                                 * @property {string|null} [projectName] Resource projectName
+                                 * @property {string|null} [projectDisplayName] Resource projectDisplayName
+                                 * @property {string|null} [parentName] Resource parentName
+                                 * @property {string|null} [parentDisplayName] Resource parentDisplayName
+                                 */
+    
+                                /**
+                                 * Constructs a new Resource.
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
+                                 * @classdesc Represents a Resource.
+                                 * @implements IResource
+                                 * @constructor
+                                 * @param {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource=} [properties] Properties to set
+                                 */
+                                function Resource(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Resource name.
+                                 * @member {string} name
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 */
+                                Resource.prototype.name = "";
+    
+                                /**
+                                 * Resource projectName.
+                                 * @member {string} projectName
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 */
+                                Resource.prototype.projectName = "";
+    
+                                /**
+                                 * Resource projectDisplayName.
+                                 * @member {string} projectDisplayName
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 */
+                                Resource.prototype.projectDisplayName = "";
+    
+                                /**
+                                 * Resource parentName.
+                                 * @member {string} parentName
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 */
+                                Resource.prototype.parentName = "";
+    
+                                /**
+                                 * Resource parentDisplayName.
+                                 * @member {string} parentDisplayName
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 */
+                                Resource.prototype.parentDisplayName = "";
+    
+                                /**
+                                 * Creates a new Resource instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource=} [properties] Properties to set
+                                 * @returns {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource} Resource instance
+                                 */
+                                Resource.create = function create(properties) {
+                                    return new Resource(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Resource message. Does not implicitly {@link google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource} message Resource message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Resource.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.name != null && message.hasOwnProperty("name"))
+                                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                                    if (message.projectName != null && message.hasOwnProperty("projectName"))
+                                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.projectName);
+                                    if (message.projectDisplayName != null && message.hasOwnProperty("projectDisplayName"))
+                                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.projectDisplayName);
+                                    if (message.parentName != null && message.hasOwnProperty("parentName"))
+                                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.parentName);
+                                    if (message.parentDisplayName != null && message.hasOwnProperty("parentDisplayName"))
+                                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.parentDisplayName);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Resource message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource} message Resource message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Resource.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Resource message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource} Resource
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Resource.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.name = reader.string();
+                                            break;
+                                        case 2:
+                                            message.projectName = reader.string();
+                                            break;
+                                        case 3:
+                                            message.projectDisplayName = reader.string();
+                                            break;
+                                        case 4:
+                                            message.parentName = reader.string();
+                                            break;
+                                        case 5:
+                                            message.parentDisplayName = reader.string();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Resource message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource} Resource
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Resource.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Resource message.
+                                 * @function verify
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Resource.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.name != null && message.hasOwnProperty("name"))
+                                        if (!$util.isString(message.name))
+                                            return "name: string expected";
+                                    if (message.projectName != null && message.hasOwnProperty("projectName"))
+                                        if (!$util.isString(message.projectName))
+                                            return "projectName: string expected";
+                                    if (message.projectDisplayName != null && message.hasOwnProperty("projectDisplayName"))
+                                        if (!$util.isString(message.projectDisplayName))
+                                            return "projectDisplayName: string expected";
+                                    if (message.parentName != null && message.hasOwnProperty("parentName"))
+                                        if (!$util.isString(message.parentName))
+                                            return "parentName: string expected";
+                                    if (message.parentDisplayName != null && message.hasOwnProperty("parentDisplayName"))
+                                        if (!$util.isString(message.parentDisplayName))
+                                            return "parentDisplayName: string expected";
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Resource message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource} Resource
+                                 */
+                                Resource.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+                                        return object;
+                                    var message = new $root.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource();
+                                    if (object.name != null)
+                                        message.name = String(object.name);
+                                    if (object.projectName != null)
+                                        message.projectName = String(object.projectName);
+                                    if (object.projectDisplayName != null)
+                                        message.projectDisplayName = String(object.projectDisplayName);
+                                    if (object.parentName != null)
+                                        message.parentName = String(object.parentName);
+                                    if (object.parentDisplayName != null)
+                                        message.parentDisplayName = String(object.parentDisplayName);
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Resource message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @static
+                                 * @param {google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource} message Resource
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Resource.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        object.name = "";
+                                        object.projectName = "";
+                                        object.projectDisplayName = "";
+                                        object.parentName = "";
+                                        object.parentDisplayName = "";
+                                    }
+                                    if (message.name != null && message.hasOwnProperty("name"))
+                                        object.name = message.name;
+                                    if (message.projectName != null && message.hasOwnProperty("projectName"))
+                                        object.projectName = message.projectName;
+                                    if (message.projectDisplayName != null && message.hasOwnProperty("projectDisplayName"))
+                                        object.projectDisplayName = message.projectDisplayName;
+                                    if (message.parentName != null && message.hasOwnProperty("parentName"))
+                                        object.parentName = message.parentName;
+                                    if (message.parentDisplayName != null && message.hasOwnProperty("parentDisplayName"))
+                                        object.parentDisplayName = message.parentDisplayName;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Resource to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Resource.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return Resource;
+                            })();
     
                             /**
                              * StateChange enum.
@@ -6984,6 +7287,9 @@
                              * @property {string|null} [resourceParent] SecurityCenterProperties resourceParent
                              * @property {string|null} [resourceProject] SecurityCenterProperties resourceProject
                              * @property {Array.<string>|null} [resourceOwners] SecurityCenterProperties resourceOwners
+                             * @property {string|null} [resourceDisplayName] SecurityCenterProperties resourceDisplayName
+                             * @property {string|null} [resourceParentDisplayName] SecurityCenterProperties resourceParentDisplayName
+                             * @property {string|null} [resourceProjectDisplayName] SecurityCenterProperties resourceProjectDisplayName
                              */
     
                             /**
@@ -7043,6 +7349,30 @@
                             SecurityCenterProperties.prototype.resourceOwners = $util.emptyArray;
     
                             /**
+                             * SecurityCenterProperties resourceDisplayName.
+                             * @member {string} resourceDisplayName
+                             * @memberof google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
+                             * @instance
+                             */
+                            SecurityCenterProperties.prototype.resourceDisplayName = "";
+    
+                            /**
+                             * SecurityCenterProperties resourceParentDisplayName.
+                             * @member {string} resourceParentDisplayName
+                             * @memberof google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
+                             * @instance
+                             */
+                            SecurityCenterProperties.prototype.resourceParentDisplayName = "";
+    
+                            /**
+                             * SecurityCenterProperties resourceProjectDisplayName.
+                             * @member {string} resourceProjectDisplayName
+                             * @memberof google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
+                             * @instance
+                             */
+                            SecurityCenterProperties.prototype.resourceProjectDisplayName = "";
+    
+                            /**
                              * Creates a new SecurityCenterProperties instance using the specified properties.
                              * @function create
                              * @memberof google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
@@ -7077,6 +7407,12 @@
                                 if (message.resourceOwners != null && message.resourceOwners.length)
                                     for (var i = 0; i < message.resourceOwners.length; ++i)
                                         writer.uint32(/* id 5, wireType 2 =*/42).string(message.resourceOwners[i]);
+                                if (message.resourceDisplayName != null && message.hasOwnProperty("resourceDisplayName"))
+                                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.resourceDisplayName);
+                                if (message.resourceParentDisplayName != null && message.hasOwnProperty("resourceParentDisplayName"))
+                                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.resourceParentDisplayName);
+                                if (message.resourceProjectDisplayName != null && message.hasOwnProperty("resourceProjectDisplayName"))
+                                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.resourceProjectDisplayName);
                                 return writer;
                             };
     
@@ -7127,6 +7463,15 @@
                                         if (!(message.resourceOwners && message.resourceOwners.length))
                                             message.resourceOwners = [];
                                         message.resourceOwners.push(reader.string());
+                                        break;
+                                    case 6:
+                                        message.resourceDisplayName = reader.string();
+                                        break;
+                                    case 7:
+                                        message.resourceParentDisplayName = reader.string();
+                                        break;
+                                    case 8:
+                                        message.resourceProjectDisplayName = reader.string();
                                         break;
                                     default:
                                         reader.skipType(tag & 7);
@@ -7182,6 +7527,15 @@
                                         if (!$util.isString(message.resourceOwners[i]))
                                             return "resourceOwners: string[] expected";
                                 }
+                                if (message.resourceDisplayName != null && message.hasOwnProperty("resourceDisplayName"))
+                                    if (!$util.isString(message.resourceDisplayName))
+                                        return "resourceDisplayName: string expected";
+                                if (message.resourceParentDisplayName != null && message.hasOwnProperty("resourceParentDisplayName"))
+                                    if (!$util.isString(message.resourceParentDisplayName))
+                                        return "resourceParentDisplayName: string expected";
+                                if (message.resourceProjectDisplayName != null && message.hasOwnProperty("resourceProjectDisplayName"))
+                                    if (!$util.isString(message.resourceProjectDisplayName))
+                                        return "resourceProjectDisplayName: string expected";
                                 return null;
                             };
     
@@ -7212,6 +7566,12 @@
                                     for (var i = 0; i < object.resourceOwners.length; ++i)
                                         message.resourceOwners[i] = String(object.resourceOwners[i]);
                                 }
+                                if (object.resourceDisplayName != null)
+                                    message.resourceDisplayName = String(object.resourceDisplayName);
+                                if (object.resourceParentDisplayName != null)
+                                    message.resourceParentDisplayName = String(object.resourceParentDisplayName);
+                                if (object.resourceProjectDisplayName != null)
+                                    message.resourceProjectDisplayName = String(object.resourceProjectDisplayName);
                                 return message;
                             };
     
@@ -7235,6 +7595,9 @@
                                     object.resourceType = "";
                                     object.resourceParent = "";
                                     object.resourceProject = "";
+                                    object.resourceDisplayName = "";
+                                    object.resourceParentDisplayName = "";
+                                    object.resourceProjectDisplayName = "";
                                 }
                                 if (message.resourceName != null && message.hasOwnProperty("resourceName"))
                                     object.resourceName = message.resourceName;
@@ -7249,6 +7612,12 @@
                                     for (var j = 0; j < message.resourceOwners.length; ++j)
                                         object.resourceOwners[j] = message.resourceOwners[j];
                                 }
+                                if (message.resourceDisplayName != null && message.hasOwnProperty("resourceDisplayName"))
+                                    object.resourceDisplayName = message.resourceDisplayName;
+                                if (message.resourceParentDisplayName != null && message.hasOwnProperty("resourceParentDisplayName"))
+                                    object.resourceParentDisplayName = message.resourceParentDisplayName;
+                                if (message.resourceProjectDisplayName != null && message.hasOwnProperty("resourceProjectDisplayName"))
+                                    object.resourceProjectDisplayName = message.resourceProjectDisplayName;
                                 return object;
                             };
     
@@ -8646,262 +9015,6 @@
                         })();
     
                         return OrganizationSettings;
-                    })();
-    
-                    v1.RunAssetDiscoveryResponse = (function() {
-    
-                        /**
-                         * Properties of a RunAssetDiscoveryResponse.
-                         * @memberof google.cloud.securitycenter.v1
-                         * @interface IRunAssetDiscoveryResponse
-                         * @property {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State|null} [state] RunAssetDiscoveryResponse state
-                         * @property {google.protobuf.IDuration|null} [duration] RunAssetDiscoveryResponse duration
-                         */
-    
-                        /**
-                         * Constructs a new RunAssetDiscoveryResponse.
-                         * @memberof google.cloud.securitycenter.v1
-                         * @classdesc Represents a RunAssetDiscoveryResponse.
-                         * @implements IRunAssetDiscoveryResponse
-                         * @constructor
-                         * @param {google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse=} [properties] Properties to set
-                         */
-                        function RunAssetDiscoveryResponse(properties) {
-                            if (properties)
-                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                    if (properties[keys[i]] != null)
-                                        this[keys[i]] = properties[keys[i]];
-                        }
-    
-                        /**
-                         * RunAssetDiscoveryResponse state.
-                         * @member {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State} state
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @instance
-                         */
-                        RunAssetDiscoveryResponse.prototype.state = 0;
-    
-                        /**
-                         * RunAssetDiscoveryResponse duration.
-                         * @member {google.protobuf.IDuration|null|undefined} duration
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @instance
-                         */
-                        RunAssetDiscoveryResponse.prototype.duration = null;
-    
-                        /**
-                         * Creates a new RunAssetDiscoveryResponse instance using the specified properties.
-                         * @function create
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse=} [properties] Properties to set
-                         * @returns {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse} RunAssetDiscoveryResponse instance
-                         */
-                        RunAssetDiscoveryResponse.create = function create(properties) {
-                            return new RunAssetDiscoveryResponse(properties);
-                        };
-    
-                        /**
-                         * Encodes the specified RunAssetDiscoveryResponse message. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                         * @function encode
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse} message RunAssetDiscoveryResponse message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        RunAssetDiscoveryResponse.encode = function encode(message, writer) {
-                            if (!writer)
-                                writer = $Writer.create();
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
-                            if (message.duration != null && message.hasOwnProperty("duration"))
-                                $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                            return writer;
-                        };
-    
-                        /**
-                         * Encodes the specified RunAssetDiscoveryResponse message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                         * @function encodeDelimited
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse} message RunAssetDiscoveryResponse message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        RunAssetDiscoveryResponse.encodeDelimited = function encodeDelimited(message, writer) {
-                            return this.encode(message, writer).ldelim();
-                        };
-    
-                        /**
-                         * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer.
-                         * @function decode
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @param {number} [length] Message length if known beforehand
-                         * @returns {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse} RunAssetDiscoveryResponse
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        RunAssetDiscoveryResponse.decode = function decode(reader, length) {
-                            if (!(reader instanceof $Reader))
-                                reader = $Reader.create(reader);
-                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse();
-                            while (reader.pos < end) {
-                                var tag = reader.uint32();
-                                switch (tag >>> 3) {
-                                case 1:
-                                    message.state = reader.int32();
-                                    break;
-                                case 2:
-                                    message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
-                                    break;
-                                default:
-                                    reader.skipType(tag & 7);
-                                    break;
-                                }
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer, length delimited.
-                         * @function decodeDelimited
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @returns {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse} RunAssetDiscoveryResponse
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        RunAssetDiscoveryResponse.decodeDelimited = function decodeDelimited(reader) {
-                            if (!(reader instanceof $Reader))
-                                reader = new $Reader(reader);
-                            return this.decode(reader, reader.uint32());
-                        };
-    
-                        /**
-                         * Verifies a RunAssetDiscoveryResponse message.
-                         * @function verify
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {Object.<string,*>} message Plain object to verify
-                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                         */
-                        RunAssetDiscoveryResponse.verify = function verify(message) {
-                            if (typeof message !== "object" || message === null)
-                                return "object expected";
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                switch (message.state) {
-                                default:
-                                    return "state: enum value expected";
-                                case 0:
-                                case 1:
-                                case 2:
-                                case 3:
-                                    break;
-                                }
-                            if (message.duration != null && message.hasOwnProperty("duration")) {
-                                var error = $root.google.protobuf.Duration.verify(message.duration);
-                                if (error)
-                                    return "duration." + error;
-                            }
-                            return null;
-                        };
-    
-                        /**
-                         * Creates a RunAssetDiscoveryResponse message from a plain object. Also converts values to their respective internal types.
-                         * @function fromObject
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {Object.<string,*>} object Plain object
-                         * @returns {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse} RunAssetDiscoveryResponse
-                         */
-                        RunAssetDiscoveryResponse.fromObject = function fromObject(object) {
-                            if (object instanceof $root.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse)
-                                return object;
-                            var message = new $root.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse();
-                            switch (object.state) {
-                            case "STATE_UNSPECIFIED":
-                            case 0:
-                                message.state = 0;
-                                break;
-                            case "COMPLETED":
-                            case 1:
-                                message.state = 1;
-                                break;
-                            case "SUPERSEDED":
-                            case 2:
-                                message.state = 2;
-                                break;
-                            case "TERMINATED":
-                            case 3:
-                                message.state = 3;
-                                break;
-                            }
-                            if (object.duration != null) {
-                                if (typeof object.duration !== "object")
-                                    throw TypeError(".google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.duration: object expected");
-                                message.duration = $root.google.protobuf.Duration.fromObject(object.duration);
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Creates a plain object from a RunAssetDiscoveryResponse message. Also converts values to other types if specified.
-                         * @function toObject
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @static
-                         * @param {google.cloud.securitycenter.v1.RunAssetDiscoveryResponse} message RunAssetDiscoveryResponse
-                         * @param {$protobuf.IConversionOptions} [options] Conversion options
-                         * @returns {Object.<string,*>} Plain object
-                         */
-                        RunAssetDiscoveryResponse.toObject = function toObject(message, options) {
-                            if (!options)
-                                options = {};
-                            var object = {};
-                            if (options.defaults) {
-                                object.state = options.enums === String ? "STATE_UNSPECIFIED" : 0;
-                                object.duration = null;
-                            }
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                object.state = options.enums === String ? $root.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State[message.state] : message.state;
-                            if (message.duration != null && message.hasOwnProperty("duration"))
-                                object.duration = $root.google.protobuf.Duration.toObject(message.duration, options);
-                            return object;
-                        };
-    
-                        /**
-                         * Converts this RunAssetDiscoveryResponse to JSON.
-                         * @function toJSON
-                         * @memberof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse
-                         * @instance
-                         * @returns {Object.<string,*>} JSON object
-                         */
-                        RunAssetDiscoveryResponse.prototype.toJSON = function toJSON() {
-                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                        };
-    
-                        /**
-                         * State enum.
-                         * @name google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State
-                         * @enum {string}
-                         * @property {number} STATE_UNSPECIFIED=0 STATE_UNSPECIFIED value
-                         * @property {number} COMPLETED=1 COMPLETED value
-                         * @property {number} SUPERSEDED=2 SUPERSEDED value
-                         * @property {number} TERMINATED=3 TERMINATED value
-                         */
-                        RunAssetDiscoveryResponse.State = (function() {
-                            var valuesById = {}, values = Object.create(valuesById);
-                            values[valuesById[0] = "STATE_UNSPECIFIED"] = 0;
-                            values[valuesById[1] = "COMPLETED"] = 1;
-                            values[valuesById[2] = "SUPERSEDED"] = 2;
-                            values[valuesById[3] = "TERMINATED"] = 3;
-                            return values;
-                        })();
-    
-                        return RunAssetDiscoveryResponse;
                     })();
     
                     v1.Source = (function() {
@@ -28613,6 +28726,225 @@
                 return Timestamp;
             })();
     
+            protobuf.Any = (function() {
+    
+                /**
+                 * Properties of an Any.
+                 * @memberof google.protobuf
+                 * @interface IAny
+                 * @property {string|null} [type_url] Any type_url
+                 * @property {Uint8Array|null} [value] Any value
+                 */
+    
+                /**
+                 * Constructs a new Any.
+                 * @memberof google.protobuf
+                 * @classdesc Represents an Any.
+                 * @implements IAny
+                 * @constructor
+                 * @param {google.protobuf.IAny=} [properties] Properties to set
+                 */
+                function Any(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Any type_url.
+                 * @member {string} type_url
+                 * @memberof google.protobuf.Any
+                 * @instance
+                 */
+                Any.prototype.type_url = "";
+    
+                /**
+                 * Any value.
+                 * @member {Uint8Array} value
+                 * @memberof google.protobuf.Any
+                 * @instance
+                 */
+                Any.prototype.value = $util.newBuffer([]);
+    
+                /**
+                 * Creates a new Any instance using the specified properties.
+                 * @function create
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {google.protobuf.IAny=} [properties] Properties to set
+                 * @returns {google.protobuf.Any} Any instance
+                 */
+                Any.create = function create(properties) {
+                    return new Any(properties);
+                };
+    
+                /**
+                 * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+                 * @function encode
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {google.protobuf.IAny} message Any message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Any.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.type_url != null && message.hasOwnProperty("type_url"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_url);
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified Any message, length delimited. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {google.protobuf.IAny} message Any message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Any.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes an Any message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {google.protobuf.Any} Any
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Any.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Any();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.type_url = reader.string();
+                            break;
+                        case 2:
+                            message.value = reader.bytes();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes an Any message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {google.protobuf.Any} Any
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Any.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies an Any message.
+                 * @function verify
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Any.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.type_url != null && message.hasOwnProperty("type_url"))
+                        if (!$util.isString(message.type_url))
+                            return "type_url: string expected";
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
+                            return "value: buffer expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates an Any message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {google.protobuf.Any} Any
+                 */
+                Any.fromObject = function fromObject(object) {
+                    if (object instanceof $root.google.protobuf.Any)
+                        return object;
+                    var message = new $root.google.protobuf.Any();
+                    if (object.type_url != null)
+                        message.type_url = String(object.type_url);
+                    if (object.value != null)
+                        if (typeof object.value === "string")
+                            $util.base64.decode(object.value, message.value = $util.newBuffer($util.base64.length(object.value)), 0);
+                        else if (object.value.length)
+                            message.value = object.value;
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from an Any message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof google.protobuf.Any
+                 * @static
+                 * @param {google.protobuf.Any} message Any
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Any.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.type_url = "";
+                        if (options.bytes === String)
+                            object.value = "";
+                        else {
+                            object.value = [];
+                            if (options.bytes !== Array)
+                                object.value = $util.newBuffer(object.value);
+                        }
+                    }
+                    if (message.type_url != null && message.hasOwnProperty("type_url"))
+                        object.type_url = message.type_url;
+                    if (message.value != null && message.hasOwnProperty("value"))
+                        object.value = options.bytes === String ? $util.base64.encode(message.value, 0, message.value.length) : options.bytes === Array ? Array.prototype.slice.call(message.value) : message.value;
+                    return object;
+                };
+    
+                /**
+                 * Converts this Any to JSON.
+                 * @function toJSON
+                 * @memberof google.protobuf.Any
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Any.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return Any;
+            })();
+    
             protobuf.Duration = (function() {
     
                 /**
@@ -28835,225 +29167,6 @@
                 };
     
                 return Duration;
-            })();
-    
-            protobuf.Any = (function() {
-    
-                /**
-                 * Properties of an Any.
-                 * @memberof google.protobuf
-                 * @interface IAny
-                 * @property {string|null} [type_url] Any type_url
-                 * @property {Uint8Array|null} [value] Any value
-                 */
-    
-                /**
-                 * Constructs a new Any.
-                 * @memberof google.protobuf
-                 * @classdesc Represents an Any.
-                 * @implements IAny
-                 * @constructor
-                 * @param {google.protobuf.IAny=} [properties] Properties to set
-                 */
-                function Any(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Any type_url.
-                 * @member {string} type_url
-                 * @memberof google.protobuf.Any
-                 * @instance
-                 */
-                Any.prototype.type_url = "";
-    
-                /**
-                 * Any value.
-                 * @member {Uint8Array} value
-                 * @memberof google.protobuf.Any
-                 * @instance
-                 */
-                Any.prototype.value = $util.newBuffer([]);
-    
-                /**
-                 * Creates a new Any instance using the specified properties.
-                 * @function create
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {google.protobuf.IAny=} [properties] Properties to set
-                 * @returns {google.protobuf.Any} Any instance
-                 */
-                Any.create = function create(properties) {
-                    return new Any(properties);
-                };
-    
-                /**
-                 * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
-                 * @function encode
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {google.protobuf.IAny} message Any message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Any.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.type_url != null && message.hasOwnProperty("type_url"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_url);
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
-                    return writer;
-                };
-    
-                /**
-                 * Encodes the specified Any message, length delimited. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {google.protobuf.IAny} message Any message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Any.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-    
-                /**
-                 * Decodes an Any message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {google.protobuf.Any} Any
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Any.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Any();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.type_url = reader.string();
-                            break;
-                        case 2:
-                            message.value = reader.bytes();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Decodes an Any message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {google.protobuf.Any} Any
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Any.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-    
-                /**
-                 * Verifies an Any message.
-                 * @function verify
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Any.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.type_url != null && message.hasOwnProperty("type_url"))
-                        if (!$util.isString(message.type_url))
-                            return "type_url: string expected";
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
-                            return "value: buffer expected";
-                    return null;
-                };
-    
-                /**
-                 * Creates an Any message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {google.protobuf.Any} Any
-                 */
-                Any.fromObject = function fromObject(object) {
-                    if (object instanceof $root.google.protobuf.Any)
-                        return object;
-                    var message = new $root.google.protobuf.Any();
-                    if (object.type_url != null)
-                        message.type_url = String(object.type_url);
-                    if (object.value != null)
-                        if (typeof object.value === "string")
-                            $util.base64.decode(object.value, message.value = $util.newBuffer($util.base64.length(object.value)), 0);
-                        else if (object.value.length)
-                            message.value = object.value;
-                    return message;
-                };
-    
-                /**
-                 * Creates a plain object from an Any message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof google.protobuf.Any
-                 * @static
-                 * @param {google.protobuf.Any} message Any
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                Any.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.defaults) {
-                        object.type_url = "";
-                        if (options.bytes === String)
-                            object.value = "";
-                        else {
-                            object.value = [];
-                            if (options.bytes !== Array)
-                                object.value = $util.newBuffer(object.value);
-                        }
-                    }
-                    if (message.type_url != null && message.hasOwnProperty("type_url"))
-                        object.type_url = message.type_url;
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        object.value = options.bytes === String ? $util.base64.encode(message.value, 0, message.value.length) : options.bytes === Array ? Array.prototype.slice.call(message.value) : message.value;
-                    return object;
-                };
-    
-                /**
-                 * Converts this Any to JSON.
-                 * @function toJSON
-                 * @memberof google.protobuf.Any
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                Any.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-    
-                return Any;
             })();
     
             protobuf.Empty = (function() {

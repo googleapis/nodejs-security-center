@@ -2168,6 +2168,9 @@ export namespace google {
 
                         /** ListFindingsResult stateChange */
                         stateChange?: (google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange|null);
+
+                        /** ListFindingsResult resource */
+                        resource?: (google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource|null);
                     }
 
                     /** Represents a ListFindingsResult. */
@@ -2184,6 +2187,9 @@ export namespace google {
 
                         /** ListFindingsResult stateChange. */
                         public stateChange: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange;
+
+                        /** ListFindingsResult resource. */
+                        public resource?: (google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource|null);
 
                         /**
                          * Creates a new ListFindingsResult instance using the specified properties.
@@ -2257,6 +2263,120 @@ export namespace google {
                     }
 
                     namespace ListFindingsResult {
+
+                        /** Properties of a Resource. */
+                        interface IResource {
+
+                            /** Resource name */
+                            name?: (string|null);
+
+                            /** Resource projectName */
+                            projectName?: (string|null);
+
+                            /** Resource projectDisplayName */
+                            projectDisplayName?: (string|null);
+
+                            /** Resource parentName */
+                            parentName?: (string|null);
+
+                            /** Resource parentDisplayName */
+                            parentDisplayName?: (string|null);
+                        }
+
+                        /** Represents a Resource. */
+                        class Resource implements IResource {
+
+                            /**
+                             * Constructs a new Resource.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource);
+
+                            /** Resource name. */
+                            public name: string;
+
+                            /** Resource projectName. */
+                            public projectName: string;
+
+                            /** Resource projectDisplayName. */
+                            public projectDisplayName: string;
+
+                            /** Resource parentName. */
+                            public parentName: string;
+
+                            /** Resource parentDisplayName. */
+                            public parentDisplayName: string;
+
+                            /**
+                             * Creates a new Resource instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns Resource instance
+                             */
+                            public static create(properties?: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource): google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource;
+
+                            /**
+                             * Encodes the specified Resource message. Does not implicitly {@link google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.verify|verify} messages.
+                             * @param message Resource message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified Resource message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.verify|verify} messages.
+                             * @param message Resource message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.IResource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a Resource message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns Resource
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource;
+
+                            /**
+                             * Decodes a Resource message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns Resource
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource;
+
+                            /**
+                             * Verifies a Resource message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a Resource message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns Resource
+                             */
+                            public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource;
+
+                            /**
+                             * Creates a plain object from a Resource message. Also converts values to other types if specified.
+                             * @param message Resource
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this Resource to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
 
                         /** StateChange enum. */
                         enum StateChange {
@@ -2996,6 +3116,15 @@ export namespace google {
 
                         /** SecurityCenterProperties resourceOwners */
                         resourceOwners?: (string[]|null);
+
+                        /** SecurityCenterProperties resourceDisplayName */
+                        resourceDisplayName?: (string|null);
+
+                        /** SecurityCenterProperties resourceParentDisplayName */
+                        resourceParentDisplayName?: (string|null);
+
+                        /** SecurityCenterProperties resourceProjectDisplayName */
+                        resourceProjectDisplayName?: (string|null);
                     }
 
                     /** Represents a SecurityCenterProperties. */
@@ -3021,6 +3150,15 @@ export namespace google {
 
                         /** SecurityCenterProperties resourceOwners. */
                         public resourceOwners: string[];
+
+                        /** SecurityCenterProperties resourceDisplayName. */
+                        public resourceDisplayName: string;
+
+                        /** SecurityCenterProperties resourceParentDisplayName. */
+                        public resourceParentDisplayName: string;
+
+                        /** SecurityCenterProperties resourceProjectDisplayName. */
+                        public resourceProjectDisplayName: string;
 
                         /**
                          * Creates a new SecurityCenterProperties instance using the specified properties.
@@ -3642,113 +3780,6 @@ export namespace google {
                             INCLUDE_ONLY = 1,
                             EXCLUDE = 2
                         }
-                    }
-                }
-
-                /** Properties of a RunAssetDiscoveryResponse. */
-                interface IRunAssetDiscoveryResponse {
-
-                    /** RunAssetDiscoveryResponse state */
-                    state?: (google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State|null);
-
-                    /** RunAssetDiscoveryResponse duration */
-                    duration?: (google.protobuf.IDuration|null);
-                }
-
-                /** Represents a RunAssetDiscoveryResponse. */
-                class RunAssetDiscoveryResponse implements IRunAssetDiscoveryResponse {
-
-                    /**
-                     * Constructs a new RunAssetDiscoveryResponse.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse);
-
-                    /** RunAssetDiscoveryResponse state. */
-                    public state: google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State;
-
-                    /** RunAssetDiscoveryResponse duration. */
-                    public duration?: (google.protobuf.IDuration|null);
-
-                    /**
-                     * Creates a new RunAssetDiscoveryResponse instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns RunAssetDiscoveryResponse instance
-                     */
-                    public static create(properties?: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Encodes the specified RunAssetDiscoveryResponse message. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                     * @param message RunAssetDiscoveryResponse message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified RunAssetDiscoveryResponse message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                     * @param message RunAssetDiscoveryResponse message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns RunAssetDiscoveryResponse
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns RunAssetDiscoveryResponse
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Verifies a RunAssetDiscoveryResponse message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a RunAssetDiscoveryResponse message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns RunAssetDiscoveryResponse
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Creates a plain object from a RunAssetDiscoveryResponse message. Also converts values to other types if specified.
-                     * @param message RunAssetDiscoveryResponse
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: google.cloud.securitycenter.v1.RunAssetDiscoveryResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this RunAssetDiscoveryResponse to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
-                namespace RunAssetDiscoveryResponse {
-
-                    /** State enum. */
-                    enum State {
-                        STATE_UNSPECIFIED = 0,
-                        COMPLETED = 1,
-                        SUPERSEDED = 2,
-                        TERMINATED = 3
                     }
                 }
 
@@ -11461,102 +11492,6 @@ export namespace google {
             public toJSON(): { [k: string]: any };
         }
 
-        /** Properties of a Duration. */
-        interface IDuration {
-
-            /** Duration seconds */
-            seconds?: (number|Long|null);
-
-            /** Duration nanos */
-            nanos?: (number|null);
-        }
-
-        /** Represents a Duration. */
-        class Duration implements IDuration {
-
-            /**
-             * Constructs a new Duration.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.protobuf.IDuration);
-
-            /** Duration seconds. */
-            public seconds: (number|Long);
-
-            /** Duration nanos. */
-            public nanos: number;
-
-            /**
-             * Creates a new Duration instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Duration instance
-             */
-            public static create(properties?: google.protobuf.IDuration): google.protobuf.Duration;
-
-            /**
-             * Encodes the specified Duration message. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
-             * @param message Duration message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.protobuf.IDuration, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified Duration message, length delimited. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
-             * @param message Duration message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.protobuf.IDuration, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Duration message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Duration
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Duration;
-
-            /**
-             * Decodes a Duration message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns Duration
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Duration;
-
-            /**
-             * Verifies a Duration message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a Duration message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns Duration
-             */
-            public static fromObject(object: { [k: string]: any }): google.protobuf.Duration;
-
-            /**
-             * Creates a plain object from a Duration message. Also converts values to other types if specified.
-             * @param message Duration
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.protobuf.Duration, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this Duration to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
         /** Properties of an Any. */
         interface IAny {
 
@@ -11648,6 +11583,102 @@ export namespace google {
 
             /**
              * Converts this Any to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a Duration. */
+        interface IDuration {
+
+            /** Duration seconds */
+            seconds?: (number|Long|null);
+
+            /** Duration nanos */
+            nanos?: (number|null);
+        }
+
+        /** Represents a Duration. */
+        class Duration implements IDuration {
+
+            /**
+             * Constructs a new Duration.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IDuration);
+
+            /** Duration seconds. */
+            public seconds: (number|Long);
+
+            /** Duration nanos. */
+            public nanos: number;
+
+            /**
+             * Creates a new Duration instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Duration instance
+             */
+            public static create(properties?: google.protobuf.IDuration): google.protobuf.Duration;
+
+            /**
+             * Encodes the specified Duration message. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
+             * @param message Duration message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IDuration, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Duration message, length delimited. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
+             * @param message Duration message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.protobuf.IDuration, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Duration message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Duration
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Duration;
+
+            /**
+             * Decodes a Duration message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Duration
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Duration;
+
+            /**
+             * Verifies a Duration message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Duration message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Duration
+             */
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Duration;
+
+            /**
+             * Creates a plain object from a Duration message. Also converts values to other types if specified.
+             * @param message Duration
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.protobuf.Duration, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Duration to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
