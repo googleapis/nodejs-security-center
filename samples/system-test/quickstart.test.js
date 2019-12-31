@@ -15,14 +15,17 @@
 'use strict';
 
 const {assert} = require('chai');
+const {describe, it} = require('mocha');
 const cp = require('child_process');
 
 const organization = process.env['GCLOUD_ORGANIZATION'];
 const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
-// Skipped because createSource requires special permissions only
-// grantable on the organization level.
-it.skip('should run the quickstart', () => {
-  const stdout = execSync(`node quickstart ${organization}`);
-  assert.match(stdout, /Source created\./);
+describe('quickstart', () => {
+  // Skipped because createSource requires special permissions only
+  // grantable on the organization level.
+  it.skip('should run the quickstart', () => {
+    const stdout = execSync(`node quickstart ${organization}`);
+    assert.match(stdout, /Source created\./);
+  });
 });
