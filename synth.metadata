@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updateTime": "2020-01-28T12:33:45.801692Z",
 =======
 <<<<<<< HEAD
@@ -17,14 +18,21 @@
         "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
 =======
   "updateTime": "2020-01-25T01:05:33.496179Z",
+=======
+  "updateTime": "2020-01-25T01:48:10.679850Z",
+>>>>>>> chore: fix docs test
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-security-center.git",
+<<<<<<< HEAD
         "sha": "420bef9c00260880778194daff4f3e6db7f95c2e"
 >>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 >>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
+=======
+        "sha": "396b7d23ea78532e0fcc4817ce63b0f7867dd163"
+>>>>>>> chore: fix docs test
       }
     },
     {
@@ -234,9 +242,6 @@
     },
     {
       "path": ".kokoro/release/publish.cfg"
-    },
-    {
-      "path": ".kokoro/samples-test.sh"
     },
     {
       "path": ".kokoro/system-test.sh"

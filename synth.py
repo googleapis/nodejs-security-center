@@ -40,8 +40,8 @@ for version in versions:
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
-templates = common_templates.node_library()
-s.copy(templates, excludes=[])
+templates = common_templates.node_library(source_location='build/src')
+s.copy(templates, excludes=['.kokoro/samples-test.sh'])
 
 # Node.js specific cleanup
 subprocess.run(['npm', 'install'])
