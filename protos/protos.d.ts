@@ -42,13 +42,8 @@ export namespace google {
             /** Duration seconds. */
             public seconds: (number|Long|string);
 
-<<<<<<< HEAD
-                    /** Finding state */
-                    state?: (google.cloud.securitycenter.v1.Finding.State|keyof typeof google.cloud.securitycenter.v1.Finding.State|null);
-=======
             /** Duration nanos. */
             public nanos: number;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /**
              * Creates a new Duration instance using the specified properties.
@@ -128,13 +123,8 @@ export namespace google {
             file?: (google.protobuf.IFileDescriptorProto[]|null);
         }
 
-<<<<<<< HEAD
-                    /** Finding state. */
-                    public state: (google.cloud.securitycenter.v1.Finding.State|keyof typeof google.cloud.securitycenter.v1.Finding.State);
-=======
         /** Represents a FileDescriptorSet. */
         class FileDescriptorSet implements IFileDescriptorSet {
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /**
              * Constructs a new FileDescriptorSet.
@@ -4703,231 +4693,6 @@ export namespace google {
                          * @throws {$protobuf.util.ProtocolError} If required fields are missing
                          */
                         public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.Asset.IamPolicy;
-<<<<<<< HEAD
-
-                        /**
-                         * Decodes an IamPolicy message from the specified reader or buffer, length delimited.
-                         * @param reader Reader or buffer to decode from
-                         * @returns IamPolicy
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.Asset.IamPolicy;
-
-                        /**
-                         * Verifies an IamPolicy message.
-                         * @param message Plain object to verify
-                         * @returns `null` if valid, otherwise the reason why it is not
-                         */
-                        public static verify(message: { [k: string]: any }): (string|null);
-
-                        /**
-                         * Creates an IamPolicy message from a plain object. Also converts values to their respective internal types.
-                         * @param object Plain object
-                         * @returns IamPolicy
-                         */
-                        public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.Asset.IamPolicy;
-
-                        /**
-                         * Creates a plain object from an IamPolicy message. Also converts values to other types if specified.
-                         * @param message IamPolicy
-                         * @param [options] Conversion options
-                         * @returns Plain object
-                         */
-                        public static toObject(message: google.cloud.securitycenter.v1.Asset.IamPolicy, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                        /**
-                         * Converts this IamPolicy to JSON.
-                         * @returns JSON object
-                         */
-                        public toJSON(): { [k: string]: any };
-                    }
-                }
-
-                /** Properties of a Source. */
-                interface ISource {
-
-                    /** Source name */
-                    name?: (string|null);
-
-                    /** Source displayName */
-                    displayName?: (string|null);
-
-                    /** Source description */
-                    description?: (string|null);
-                }
-
-                /** Represents a Source. */
-                class Source implements ISource {
-
-                    /**
-                     * Constructs a new Source.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: google.cloud.securitycenter.v1.ISource);
-
-                    /** Source name. */
-                    public name: string;
-
-                    /** Source displayName. */
-                    public displayName: string;
-
-                    /** Source description. */
-                    public description: string;
-
-                    /**
-                     * Creates a new Source instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns Source instance
-                     */
-                    public static create(properties?: google.cloud.securitycenter.v1.ISource): google.cloud.securitycenter.v1.Source;
-
-                    /**
-                     * Encodes the specified Source message. Does not implicitly {@link google.cloud.securitycenter.v1.Source.verify|verify} messages.
-                     * @param message Source message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: google.cloud.securitycenter.v1.ISource, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified Source message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.Source.verify|verify} messages.
-                     * @param message Source message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: google.cloud.securitycenter.v1.ISource, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a Source message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns Source
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.Source;
-
-                    /**
-                     * Decodes a Source message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns Source
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.Source;
-
-                    /**
-                     * Verifies a Source message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a Source message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns Source
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.Source;
-
-                    /**
-                     * Creates a plain object from a Source message. Also converts values to other types if specified.
-                     * @param message Source
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: google.cloud.securitycenter.v1.Source, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this Source to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
-                /** Properties of a RunAssetDiscoveryResponse. */
-                interface IRunAssetDiscoveryResponse {
-
-                    /** RunAssetDiscoveryResponse state */
-                    state?: (google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State|keyof typeof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State|null);
-
-                    /** RunAssetDiscoveryResponse duration */
-                    duration?: (google.protobuf.IDuration|null);
-                }
-
-                /** Represents a RunAssetDiscoveryResponse. */
-                class RunAssetDiscoveryResponse implements IRunAssetDiscoveryResponse {
-
-                    /**
-                     * Constructs a new RunAssetDiscoveryResponse.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse);
-
-                    /** RunAssetDiscoveryResponse state. */
-                    public state: (google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State|keyof typeof google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State);
-
-                    /** RunAssetDiscoveryResponse duration. */
-                    public duration?: (google.protobuf.IDuration|null);
-
-                    /**
-                     * Creates a new RunAssetDiscoveryResponse instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns RunAssetDiscoveryResponse instance
-                     */
-                    public static create(properties?: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Encodes the specified RunAssetDiscoveryResponse message. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                     * @param message RunAssetDiscoveryResponse message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified RunAssetDiscoveryResponse message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.verify|verify} messages.
-                     * @param message RunAssetDiscoveryResponse message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns RunAssetDiscoveryResponse
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Decodes a RunAssetDiscoveryResponse message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns RunAssetDiscoveryResponse
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-
-                    /**
-                     * Verifies a RunAssetDiscoveryResponse message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a RunAssetDiscoveryResponse message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns RunAssetDiscoveryResponse
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
-=======
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                         /**
                          * Decodes an IamPolicy message from the specified reader or buffer, length delimited.
@@ -9244,17 +9009,12 @@ export namespace google {
                      */
                     public testIamPermissions(request: google.iam.v1.ITestIamPermissionsRequest, callback: google.cloud.securitycenter.v1beta1.SecurityCenter.TestIamPermissionsCallback): void;
 
-<<<<<<< HEAD
-                    /** RunAssetDiscoveryResponse state */
-                    state?: (google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse.State|keyof typeof google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse.State|null);
-=======
                     /**
                      * Calls TestIamPermissions.
                      * @param request TestIamPermissionsRequest message or plain object
                      * @returns Promise
                      */
                     public testIamPermissions(request: google.iam.v1.ITestIamPermissionsRequest): Promise<google.iam.v1.TestIamPermissionsResponse>;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Calls UpdateFinding.
@@ -9277,17 +9037,12 @@ export namespace google {
                      */
                     public updateOrganizationSettings(request: google.cloud.securitycenter.v1beta1.IUpdateOrganizationSettingsRequest, callback: google.cloud.securitycenter.v1beta1.SecurityCenter.UpdateOrganizationSettingsCallback): void;
 
-<<<<<<< HEAD
-                    /** RunAssetDiscoveryResponse state. */
-                    public state: (google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse.State|keyof typeof google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse.State);
-=======
                     /**
                      * Calls UpdateOrganizationSettings.
                      * @param request UpdateOrganizationSettingsRequest message or plain object
                      * @returns Promise
                      */
                     public updateOrganizationSettings(request: google.cloud.securitycenter.v1beta1.IUpdateOrganizationSettingsRequest): Promise<google.cloud.securitycenter.v1beta1.OrganizationSettings>;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Calls UpdateSource.
@@ -9447,44 +9202,8 @@ export namespace google {
                     type UpdateSecurityMarksCallback = (error: (Error|null), response?: google.cloud.securitycenter.v1beta1.SecurityMarks) => void;
                 }
 
-<<<<<<< HEAD
-                namespace OrganizationSettings {
-
-                    /** Properties of an AssetDiscoveryConfig. */
-                    interface IAssetDiscoveryConfig {
-
-                        /** AssetDiscoveryConfig projectIds */
-                        projectIds?: (string[]|null);
-
-                        /** AssetDiscoveryConfig inclusionMode */
-                        inclusionMode?: (google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode|keyof typeof google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode|null);
-                    }
-
-                    /** Represents an AssetDiscoveryConfig. */
-                    class AssetDiscoveryConfig implements IAssetDiscoveryConfig {
-
-                        /**
-                         * Constructs a new AssetDiscoveryConfig.
-                         * @param [properties] Properties to set
-                         */
-                        constructor(properties?: google.cloud.securitycenter.v1beta1.OrganizationSettings.IAssetDiscoveryConfig);
-
-                        /** AssetDiscoveryConfig projectIds. */
-                        public projectIds: string[];
-
-                        /** AssetDiscoveryConfig inclusionMode. */
-                        public inclusionMode: (google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode|keyof typeof google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode);
-
-                        /**
-                         * Creates a new AssetDiscoveryConfig instance using the specified properties.
-                         * @param [properties] Properties to set
-                         * @returns AssetDiscoveryConfig instance
-                         */
-                        public static create(properties?: google.cloud.securitycenter.v1beta1.OrganizationSettings.IAssetDiscoveryConfig): google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig;
-=======
                 /** Properties of a CreateFindingRequest. */
                 interface ICreateFindingRequest {
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** CreateFindingRequest parent */
                     parent?: (string|null);
@@ -11094,13 +10813,8 @@ export namespace google {
                     /** ListFindingsResponse nextPageToken */
                     nextPageToken?: (string|null);
 
-<<<<<<< HEAD
-                    /** GroupResult count */
-                    count?: (number|Long|string|null);
-=======
                     /** ListFindingsResponse totalSize */
                     totalSize?: (number|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
                 }
 
                 /** Represents a ListFindingsResponse. */
@@ -11115,10 +10829,6 @@ export namespace google {
                     /** ListFindingsResponse findings. */
                     public findings: google.cloud.securitycenter.v1beta1.IFinding[];
 
-<<<<<<< HEAD
-                    /** GroupResult count. */
-                    public count: (number|Long|string);
-=======
                     /** ListFindingsResponse readTime. */
                     public readTime?: (google.protobuf.ITimestamp|null);
 
@@ -11127,7 +10837,6 @@ export namespace google {
 
                     /** ListFindingsResponse totalSize. */
                     public totalSize: number;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Creates a new ListFindingsResponse instance using the specified properties.
@@ -11575,101 +11284,7 @@ export namespace google {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-<<<<<<< HEAD
-                    public static toObject(message: google.cloud.securitycenter.v1beta1.ListAssetsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this ListAssetsResponse to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
-                namespace ListAssetsResponse {
-
-                    /** Properties of a ListAssetsResult. */
-                    interface IListAssetsResult {
-
-                        /** ListAssetsResult asset */
-                        asset?: (google.cloud.securitycenter.v1beta1.IAsset|null);
-
-                        /** ListAssetsResult state */
-                        state?: (google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State|keyof typeof google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State|null);
-                    }
-
-                    /** Represents a ListAssetsResult. */
-                    class ListAssetsResult implements IListAssetsResult {
-
-                        /**
-                         * Constructs a new ListAssetsResult.
-                         * @param [properties] Properties to set
-                         */
-                        constructor(properties?: google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult);
-
-                        /** ListAssetsResult asset. */
-                        public asset?: (google.cloud.securitycenter.v1beta1.IAsset|null);
-
-                        /** ListAssetsResult state. */
-                        public state: (google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State|keyof typeof google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State);
-
-                        /**
-                         * Creates a new ListAssetsResult instance using the specified properties.
-                         * @param [properties] Properties to set
-                         * @returns ListAssetsResult instance
-                         */
-                        public static create(properties?: google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult): google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-
-                        /**
-                         * Encodes the specified ListAssetsResult message. Does not implicitly {@link google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.verify|verify} messages.
-                         * @param message ListAssetsResult message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encode(message: google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Encodes the specified ListAssetsResult message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.verify|verify} messages.
-                         * @param message ListAssetsResult message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encodeDelimited(message: google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Decodes a ListAssetsResult message from the specified reader or buffer.
-                         * @param reader Reader or buffer to decode from
-                         * @param [length] Message length if known beforehand
-                         * @returns ListAssetsResult
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-
-                        /**
-                         * Decodes a ListAssetsResult message from the specified reader or buffer, length delimited.
-                         * @param reader Reader or buffer to decode from
-                         * @returns ListAssetsResult
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-
-                        /**
-                         * Verifies a ListAssetsResult message.
-                         * @param message Plain object to verify
-                         * @returns `null` if valid, otherwise the reason why it is not
-                         */
-                        public static verify(message: { [k: string]: any }): (string|null);
-
-                        /**
-                         * Creates a ListAssetsResult message from a plain object. Also converts values to their respective internal types.
-                         * @param object Plain object
-                         * @returns ListAssetsResult
-                         */
-                        public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-=======
                     public static toObject(message: google.cloud.securitycenter.v1beta1.UpdateOrganizationSettingsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Converts this UpdateOrganizationSettingsRequest to JSON.
@@ -11982,13 +11597,8 @@ export namespace google {
                     /** Asset name */
                     name?: (string|null);
 
-<<<<<<< HEAD
-                    /** SetFindingStateRequest state */
-                    state?: (google.cloud.securitycenter.v1beta1.Finding.State|keyof typeof google.cloud.securitycenter.v1beta1.Finding.State|null);
-=======
                     /** Asset securityCenterProperties */
                     securityCenterProperties?: (google.cloud.securitycenter.v1p1beta1.Asset.ISecurityCenterProperties|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** Asset resourceProperties */
                     resourceProperties?: ({ [k: string]: google.protobuf.IValue }|null);
@@ -12018,13 +11628,8 @@ export namespace google {
                     /** Asset name. */
                     public name: string;
 
-<<<<<<< HEAD
-                    /** SetFindingStateRequest state. */
-                    public state: (google.cloud.securitycenter.v1beta1.Finding.State|keyof typeof google.cloud.securitycenter.v1beta1.Finding.State);
-=======
                     /** Asset securityCenterProperties. */
                     public securityCenterProperties?: (google.cloud.securitycenter.v1p1beta1.Asset.ISecurityCenterProperties|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** Asset resourceProperties. */
                     public resourceProperties: { [k: string]: google.protobuf.IValue };
@@ -12665,114 +12270,11 @@ export namespace google {
                     public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
-<<<<<<< HEAD
-                     * Creates an UpdateSecurityMarksRequest message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns UpdateSecurityMarksRequest
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest;
-
-                    /**
-                     * Creates a plain object from an UpdateSecurityMarksRequest message. Also converts values to other types if specified.
-                     * @param message UpdateSecurityMarksRequest
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this UpdateSecurityMarksRequest to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-            }
-        }
-    }
-
-    /** Namespace api. */
-    namespace api {
-
-        /** FieldBehavior enum. */
-        enum FieldBehavior {
-            FIELD_BEHAVIOR_UNSPECIFIED = 0,
-            OPTIONAL = 1,
-            REQUIRED = 2,
-            OUTPUT_ONLY = 3,
-            INPUT_ONLY = 4,
-            IMMUTABLE = 5
-        }
-
-        /** Properties of a ResourceDescriptor. */
-        interface IResourceDescriptor {
-
-            /** ResourceDescriptor type */
-            type?: (string|null);
-
-            /** ResourceDescriptor pattern */
-            pattern?: (string[]|null);
-
-            /** ResourceDescriptor nameField */
-            nameField?: (string|null);
-
-            /** ResourceDescriptor history */
-            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
-
-            /** ResourceDescriptor plural */
-            plural?: (string|null);
-
-            /** ResourceDescriptor singular */
-            singular?: (string|null);
-        }
-
-        /** Represents a ResourceDescriptor. */
-        class ResourceDescriptor implements IResourceDescriptor {
-
-            /**
-             * Constructs a new ResourceDescriptor.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.api.IResourceDescriptor);
-
-            /** ResourceDescriptor type. */
-            public type: string;
-
-            /** ResourceDescriptor pattern. */
-            public pattern: string[];
-
-            /** ResourceDescriptor nameField. */
-            public nameField: string;
-
-            /** ResourceDescriptor history. */
-            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
-
-            /** ResourceDescriptor plural. */
-            public plural: string;
-
-            /** ResourceDescriptor singular. */
-            public singular: string;
-
-            /**
-             * Creates a new ResourceDescriptor instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ResourceDescriptor instance
-             */
-            public static create(properties?: google.api.IResourceDescriptor): google.api.ResourceDescriptor;
-
-            /**
-             * Encodes the specified ResourceDescriptor message. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
-             * @param message ResourceDescriptor message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
-=======
                      * Creates a RunAssetDiscoveryResponse message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns RunAssetDiscoveryResponse
                      */
                     public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Creates a plain object from a RunAssetDiscoveryResponse message. Also converts values to other types if specified.
@@ -14168,13 +13670,6 @@ export namespace google {
                      */
                     public static create(properties?: google.cloud.securitycenter.v1p1beta1.IDeleteNotificationConfigRequest): google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest;
 
-<<<<<<< HEAD
-            /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
-
-            /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
-=======
                     /**
                      * Encodes the specified DeleteNotificationConfigRequest message. Does not implicitly {@link google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest.verify|verify} messages.
                      * @param message DeleteNotificationConfigRequest message or plain object to encode
@@ -14190,7 +13685,6 @@ export namespace google {
                      * @returns Writer
                      */
                     public static encodeDelimited(message: google.cloud.securitycenter.v1p1beta1.IDeleteNotificationConfigRequest, writer?: $protobuf.Writer): $protobuf.Writer;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Decodes a DeleteNotificationConfigRequest message from the specified reader or buffer.
@@ -14256,13 +13750,6 @@ export namespace google {
                      */
                     constructor(properties?: google.cloud.securitycenter.v1p1beta1.IGetNotificationConfigRequest);
 
-<<<<<<< HEAD
-            /** FieldDescriptorProto label. */
-            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
-
-            /** FieldDescriptorProto type. */
-            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
-=======
                     /** GetNotificationConfigRequest name. */
                     public name: string;
 
@@ -14272,7 +13759,6 @@ export namespace google {
                      * @returns GetNotificationConfigRequest instance
                      */
                     public static create(properties?: google.cloud.securitycenter.v1p1beta1.IGetNotificationConfigRequest): google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Encodes the specified GetNotificationConfigRequest message. Does not implicitly {@link google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest.verify|verify} messages.
@@ -15046,10 +14532,6 @@ export namespace google {
                      */
                     public static encodeDelimited(message: google.cloud.securitycenter.v1p1beta1.IGroupResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
-<<<<<<< HEAD
-            /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
-=======
                     /**
                      * Decodes a GroupResult message from the specified reader or buffer.
                      * @param reader Reader or buffer to decode from
@@ -15059,7 +14541,6 @@ export namespace google {
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
                     public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1p1beta1.GroupResult;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Decodes a GroupResult message from the specified reader or buffer, length delimited.
@@ -15201,13 +14682,8 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
-<<<<<<< HEAD
-            /** FileOptions optimizeFor. */
-            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
-=======
                 /** Properties of a ListNotificationConfigsResponse. */
                 interface IListNotificationConfigsResponse {
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListNotificationConfigsResponse notificationConfigs */
                     notificationConfigs?: (google.cloud.securitycenter.v1p1beta1.INotificationConfig[]|null);
@@ -15503,24 +14979,14 @@ export namespace google {
                 /** Properties of a ListAssetsRequest. */
                 interface IListAssetsRequest {
 
-<<<<<<< HEAD
-            /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
-=======
                     /** ListAssetsRequest parent */
                     parent?: (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListAssetsRequest filter */
                     filter?: (string|null);
 
-<<<<<<< HEAD
-            /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
-=======
                     /** ListAssetsRequest orderBy */
                     orderBy?: (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListAssetsRequest readTime */
                     readTime?: (google.protobuf.ITimestamp|null);
@@ -15550,24 +15016,14 @@ export namespace google {
                      */
                     constructor(properties?: google.cloud.securitycenter.v1p1beta1.IListAssetsRequest);
 
-<<<<<<< HEAD
-            /** FieldOptions ctype. */
-            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
-=======
                     /** ListAssetsRequest parent. */
                     public parent: string;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListAssetsRequest filter. */
                     public filter: string;
 
-<<<<<<< HEAD
-            /** FieldOptions jstype. */
-            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
-=======
                     /** ListAssetsRequest orderBy. */
                     public orderBy: string;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListAssetsRequest readTime. */
                     public readTime?: (google.protobuf.ITimestamp|null);
@@ -16014,13 +15470,8 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
-<<<<<<< HEAD
-            /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
-=======
                 /** Properties of a ListFindingsResponse. */
                 interface IListFindingsResponse {
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListFindingsResponse listFindingsResults */
                     listFindingsResults?: (google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult[]|null);
@@ -16047,13 +15498,8 @@ export namespace google {
                     /** ListFindingsResponse listFindingsResults. */
                     public listFindingsResults: google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult[];
 
-<<<<<<< HEAD
-            /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
-=======
                     /** ListFindingsResponse readTime. */
                     public readTime?: (google.protobuf.ITimestamp|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** ListFindingsResponse nextPageToken. */
                     public nextPageToken: string;
@@ -16143,20 +15589,12 @@ export namespace google {
                         /** ListFindingsResult stateChange */
                         stateChange?: (google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.StateChange|keyof typeof google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.StateChange|null);
 
-<<<<<<< HEAD
-            /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|string|null);
-
-            /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|string|null);
-=======
                         /** ListFindingsResult resource */
                         resource?: (google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.IResource|null);
                     }
 
                     /** Represents a ListFindingsResult. */
                     class ListFindingsResult implements IListFindingsResult {
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                         /**
                          * Constructs a new ListFindingsResult.
@@ -16164,13 +15602,8 @@ export namespace google {
                          */
                         constructor(properties?: google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult);
 
-<<<<<<< HEAD
-            /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|string|null);
-=======
                         /** ListFindingsResult finding. */
                         public finding?: (google.cloud.securitycenter.v1p1beta1.IFinding|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                         /** ListFindingsResult stateChange. */
                         public stateChange: (google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.StateChange|keyof typeof google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.StateChange);
@@ -16211,13 +15644,6 @@ export namespace google {
                          */
                         public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult;
 
-<<<<<<< HEAD
-            /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long|string);
-
-            /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long|string);
-=======
                         /**
                          * Decodes a ListFindingsResult message from the specified reader or buffer, length delimited.
                          * @param reader Reader or buffer to decode from
@@ -16233,7 +15659,6 @@ export namespace google {
                          * @returns `null` if valid, otherwise the reason why it is not
                          */
                         public static verify(message: { [k: string]: any }): (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                         /**
                          * Creates a ListFindingsResult message from a plain object. Also converts values to their respective internal types.
@@ -16242,10 +15667,6 @@ export namespace google {
                          */
                         public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult;
 
-<<<<<<< HEAD
-            /** UninterpretedOption stringValue. */
-            public stringValue: (Uint8Array|string);
-=======
                         /**
                          * Creates a plain object from a ListFindingsResult message. Also converts values to other types if specified.
                          * @param message ListFindingsResult
@@ -16253,7 +15674,6 @@ export namespace google {
                          * @returns Plain object
                          */
                         public static toObject(message: google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                         /**
                          * Converts this ListFindingsResult to JSON.
@@ -16917,10 +16337,6 @@ export namespace google {
                      */
                     public static encodeDelimited(message: google.cloud.securitycenter.v1p1beta1.IUpdateSourceRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
-<<<<<<< HEAD
-            /** Value nullValue */
-            nullValue?: (google.protobuf.NullValue|keyof typeof google.protobuf.NullValue|null);
-=======
                     /**
                      * Decodes an UpdateSourceRequest message from the specified reader or buffer.
                      * @param reader Reader or buffer to decode from
@@ -16930,7 +16346,6 @@ export namespace google {
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
                     public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /**
                      * Decodes an UpdateSourceRequest message from the specified reader or buffer, length delimited.
@@ -16976,13 +16391,8 @@ export namespace google {
                     /** UpdateSecurityMarksRequest securityMarks */
                     securityMarks?: (google.cloud.securitycenter.v1p1beta1.ISecurityMarks|null);
 
-<<<<<<< HEAD
-            /** Value nullValue. */
-            public nullValue: (google.protobuf.NullValue|keyof typeof google.protobuf.NullValue);
-=======
                     /** UpdateSecurityMarksRequest updateMask */
                     updateMask?: (google.protobuf.IFieldMask|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
                     /** UpdateSecurityMarksRequest startTime */
                     startTime?: (google.protobuf.ITimestamp|null);
@@ -17182,13 +16592,8 @@ export namespace google {
         /** Properties of a HttpRule. */
         interface IHttpRule {
 
-<<<<<<< HEAD
-            /** Timestamp seconds */
-            seconds?: (number|Long|string|null);
-=======
             /** HttpRule selector */
             selector?: (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /** HttpRule get */
             get?: (string|null);
@@ -17199,13 +16604,8 @@ export namespace google {
             /** HttpRule post */
             post?: (string|null);
 
-<<<<<<< HEAD
-            /** Timestamp seconds. */
-            public seconds: (number|Long|string);
-=======
             /** HttpRule delete */
             "delete"?: (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /** HttpRule patch */
             patch?: (string|null);
@@ -17244,13 +16644,8 @@ export namespace google {
             /** HttpRule post. */
             public post: string;
 
-<<<<<<< HEAD
-            /** Duration seconds */
-            seconds?: (number|Long|string|null);
-=======
             /** HttpRule delete. */
             public delete: string;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /** HttpRule patch. */
             public patch: string;
@@ -17261,13 +16656,8 @@ export namespace google {
             /** HttpRule body. */
             public body: string;
 
-<<<<<<< HEAD
-            /** Duration seconds. */
-            public seconds: (number|Long|string);
-=======
             /** HttpRule responseBody. */
             public responseBody: string;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /** HttpRule additionalBindings. */
             public additionalBindings: google.api.IHttpRule[];
@@ -17352,13 +16742,8 @@ export namespace google {
             /** CustomHttpPattern kind */
             kind?: (string|null);
 
-<<<<<<< HEAD
-            /** Any value */
-            value?: (Uint8Array|string|null);
-=======
             /** CustomHttpPattern path */
             path?: (string|null);
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
         }
 
         /** Represents a CustomHttpPattern. */
@@ -17373,13 +16758,8 @@ export namespace google {
             /** CustomHttpPattern kind. */
             public kind: string;
 
-<<<<<<< HEAD
-            /** Any value. */
-            public value: (Uint8Array|string);
-=======
             /** CustomHttpPattern path. */
             public path: string;
->>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
 
             /**
              * Creates a new CustomHttpPattern instance using the specified properties.
