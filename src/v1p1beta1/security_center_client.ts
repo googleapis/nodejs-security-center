@@ -147,11 +147,17 @@ export class SecurityCenterClient {
       sourcePathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}'
       ),
+      organizationPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}'
+      ),
+      notificationConfigPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/notificationConfigs/{notification_config}'
+      ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
       ),
       findingPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/notificationConfigs/{notification_config}'
+        'organizations/{organization}/sources/{source}/findings/{finding}'
       ),
     };
 
@@ -556,15 +562,17 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Resource name of the new notification config's parent. Its format is
-   *   "organizations/[organization_id]".
+   *   Required. Resource name of the new notification config's parent. Its format
+   *   is "organizations/[organization_id]".
    * @param {string} request.configId
+   *   Required.
    *   Unique identifier provided by the client within the parent scope.
    *   It must be between 1 and 128 characters, and contains alphanumeric
    *   characters, underscores or hyphens only.
    * @param {google.cloud.securitycenter.v1p1beta1.NotificationConfig} request.notificationConfig
-   *   The notification config being created. The name and the service account
-   *   will be ignored as they are both output only fields on this resource.
+   *   Required. The notification config being created. The name and the service
+   *   account will be ignored as they are both output only fields on this
+   *   resource.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
@@ -648,7 +656,7 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Name of the notification config to delete. Its format is
+   *   Required. Name of the notification config to delete. Its format is
    *   "organizations/[organization_id]/notificationConfigs/[config_id]".
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -802,7 +810,7 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Name of the notification config to get. Its format is
+   *   Required. Name of the notification config to get. Its format is
    *   "organizations/[organization_id]/notificationConfigs/[config_id]".
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1374,7 +1382,7 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {google.cloud.securitycenter.v1p1beta1.NotificationConfig} request.notificationConfig
-   *   The notification config to update.
+   *   Required. The notification config to update.
    * @param {google.protobuf.FieldMask} request.updateMask
    *   The FieldMask to use when updating the notification config.
    *
@@ -3219,7 +3227,7 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Name of the organization to list notification configs.
+   *   Required. Name of the organization to list notification configs.
    *   Its format is "organizations/[organization_id]".
    * @param {string} request.pageToken
    *   The value returned by the last `ListNotificationConfigsResponse`; indicates
@@ -3306,7 +3314,7 @@ export class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Name of the organization to list notification configs.
+   *   Required. Name of the organization to list notification configs.
    *   Its format is "organizations/[organization_id]".
    * @param {string} request.pageToken
    *   The value returned by the last `ListNotificationConfigsResponse`; indicates
@@ -3508,13 +3516,79 @@ export class SecurityCenterClient {
   }
 
   /**
-   * Return a fully-qualified organizationsettings resource name string.
+   * Return a fully-qualified organization resource name string.
+   *
+   * @param {string} organization
+   * @returns {string} Resource name string.
+   */
+  organizationPath(organization: string) {
+    return this._pathTemplates.organizationPathTemplate.render({
+      organization,
+    });
+  }
+
+  /**
+   * Parse the organization from Organization resource.
+   *
+   * @param {string} organizationName
+   *   A fully-qualified path representing Organization resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromOrganizationName(organizationName: string) {
+    return this._pathTemplates.organizationPathTemplate.match(organizationName)
+      .organization;
+  }
+
+  /**
+   * Return a fully-qualified notificationConfig resource name string.
+   *
+   * @param {string} organization
+   * @param {string} notification_config
+   * @returns {string} Resource name string.
+   */
+  notificationConfigPath(organization: string, notificationConfig: string) {
+    return this._pathTemplates.notificationConfigPathTemplate.render({
+      organization,
+      notification_config: notificationConfig,
+    });
+  }
+
+  /**
+   * Parse the organization from NotificationConfig resource.
+   *
+   * @param {string} notificationConfigName
+   *   A fully-qualified path representing NotificationConfig resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromNotificationConfigName(notificationConfigName: string) {
+    return this._pathTemplates.notificationConfigPathTemplate.match(
+      notificationConfigName
+    ).organization;
+  }
+
+  /**
+   * Parse the notification_config from NotificationConfig resource.
+   *
+   * @param {string} notificationConfigName
+   *   A fully-qualified path representing NotificationConfig resource.
+   * @returns {string} A string representing the notification_config.
+   */
+  matchNotificationConfigFromNotificationConfigName(
+    notificationConfigName: string
+  ) {
+    return this._pathTemplates.notificationConfigPathTemplate.match(
+      notificationConfigName
+    ).notification_config;
+  }
+
+  /**
+   * Return a fully-qualified organizationSettings resource name string.
    *
    * @param {string} organization
    * @returns {string} Resource name string.
    */
   organizationSettingsPath(organization: string) {
-    return this._pathTemplates.organizationsettingsPathTemplate.render({
+    return this._pathTemplates.organizationSettingsPathTemplate.render({
       organization,
     });
   }
@@ -3522,15 +3596,15 @@ export class SecurityCenterClient {
   /**
    * Parse the organization from OrganizationSettings resource.
    *
-   * @param {string} organizationsettingsName
+   * @param {string} organizationSettingsName
    *   A fully-qualified path representing OrganizationSettings resource.
    * @returns {string} A string representing the organization.
    */
   matchOrganizationFromOrganizationSettingsName(
-    organizationsettingsName: string
+    organizationSettingsName: string
   ) {
-    return this._pathTemplates.organizationsettingsPathTemplate.match(
-      organizationsettingsName
+    return this._pathTemplates.organizationSettingsPathTemplate.match(
+      organizationSettingsName
     ).organization;
   }
 
@@ -3538,13 +3612,15 @@ export class SecurityCenterClient {
    * Return a fully-qualified finding resource name string.
    *
    * @param {string} organization
-   * @param {string} notification_config
+   * @param {string} source
+   * @param {string} finding
    * @returns {string} Resource name string.
    */
-  findingPath(organization: string, notificationConfig: string) {
+  findingPath(organization: string, source: string, finding: string) {
     return this._pathTemplates.findingPathTemplate.render({
       organization,
-      notification_config: notificationConfig,
+      source,
+      finding,
     });
   }
 
@@ -3561,15 +3637,25 @@ export class SecurityCenterClient {
   }
 
   /**
-   * Parse the notification_config from Finding resource.
+   * Parse the source from Finding resource.
    *
    * @param {string} findingName
    *   A fully-qualified path representing Finding resource.
-   * @returns {string} A string representing the notification_config.
+   * @returns {string} A string representing the source.
    */
-  matchNotification_configFromFindingName(findingName: string) {
-    return this._pathTemplates.findingPathTemplate.match(findingName)
-      .notification_config;
+  matchSourceFromFindingName(findingName: string) {
+    return this._pathTemplates.findingPathTemplate.match(findingName).source;
+  }
+
+  /**
+   * Parse the finding from Finding resource.
+   *
+   * @param {string} findingName
+   *   A fully-qualified path representing Finding resource.
+   * @returns {string} A string representing the finding.
+   */
+  matchFindingFromFindingName(findingName: string) {
+    return this._pathTemplates.findingPathTemplate.match(findingName).finding;
   }
 
   /**

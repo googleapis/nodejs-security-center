@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updateTime": "2020-01-28T12:33:45.801692Z",
 =======
 <<<<<<< HEAD
@@ -21,11 +22,15 @@
 =======
   "updateTime": "2020-01-25T01:48:10.679850Z",
 >>>>>>> chore: fix docs test
+=======
+  "updateTime": "2020-01-31T18:24:17.333810Z",
+>>>>>>> chore: re-run generator
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-security-center.git",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "sha": "420bef9c00260880778194daff4f3e6db7f95c2e"
 >>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
@@ -33,12 +38,16 @@
 =======
         "sha": "396b7d23ea78532e0fcc4817ce63b0f7867dd163"
 >>>>>>> chore: fix docs test
+=======
+        "sha": "fc95f8cd39e240ad56fce10e1bea5f7593634daf"
+>>>>>>> chore: re-run generator
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "sha": "8e981acfd9b97ea2f312f11bbaa7b6c16e412dea",
         "internalRef": "291821782",
@@ -59,6 +68,10 @@
 =======
         "sha": "3c39a1d6e23c1ef63c7fba4019c25e76c40dfe19",
         "internalRef": "291420695"
+=======
+        "sha": "2717b8a1c762b26911b45ecc2e4ee01d98401b28",
+        "internalRef": "292555664"
+>>>>>>> chore: re-run generator
       }
     },
     {
@@ -296,11 +309,17 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "path": "package.json"
     },
     {
 =======
 >>>>>>> feat: convert library to TypeScript, pulling in v1p1beta1
+=======
+      "path": "protos/google/cloud/common_resources.proto"
+    },
+    {
+>>>>>>> chore: re-run generator
       "path": "protos/google/cloud/securitycenter/v1/asset.proto"
     },
     {

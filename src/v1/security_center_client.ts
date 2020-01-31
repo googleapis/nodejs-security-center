@@ -147,6 +147,9 @@ export class SecurityCenterClient {
       sourcePathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}'
       ),
+      organizationPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}'
+      ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
       ),
@@ -2963,13 +2966,37 @@ export class SecurityCenterClient {
   }
 
   /**
-   * Return a fully-qualified organizationsettings resource name string.
+   * Return a fully-qualified organization resource name string.
+   *
+   * @param {string} organization
+   * @returns {string} Resource name string.
+   */
+  organizationPath(organization: string) {
+    return this._pathTemplates.organizationPathTemplate.render({
+      organization,
+    });
+  }
+
+  /**
+   * Parse the organization from Organization resource.
+   *
+   * @param {string} organizationName
+   *   A fully-qualified path representing Organization resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromOrganizationName(organizationName: string) {
+    return this._pathTemplates.organizationPathTemplate.match(organizationName)
+      .organization;
+  }
+
+  /**
+   * Return a fully-qualified organizationSettings resource name string.
    *
    * @param {string} organization
    * @returns {string} Resource name string.
    */
   organizationSettingsPath(organization: string) {
-    return this._pathTemplates.organizationsettingsPathTemplate.render({
+    return this._pathTemplates.organizationSettingsPathTemplate.render({
       organization,
     });
   }
@@ -2977,15 +3004,15 @@ export class SecurityCenterClient {
   /**
    * Parse the organization from OrganizationSettings resource.
    *
-   * @param {string} organizationsettingsName
+   * @param {string} organizationSettingsName
    *   A fully-qualified path representing OrganizationSettings resource.
    * @returns {string} A string representing the organization.
    */
   matchOrganizationFromOrganizationSettingsName(
-    organizationsettingsName: string
+    organizationSettingsName: string
   ) {
-    return this._pathTemplates.organizationsettingsPathTemplate.match(
-      organizationsettingsName
+    return this._pathTemplates.organizationSettingsPathTemplate.match(
+      organizationSettingsName
     ).organization;
   }
 

@@ -2860,7 +2860,9 @@
                     "java_multiple_files": true,
                     "java_package": "com.google.cloud.securitycenter.v1p1beta1",
                     "php_namespace": "Google\\Cloud\\SecurityCenter\\V1p1beta1",
-                    "ruby_package": "Google::Cloud::SecurityCenter::V1p1Beta1"
+                    "ruby_package": "Google::Cloud::SecurityCenter::V1p1Beta1",
+                    "(google.api.resource_definition).type": "pubsub.googleapis.com/Topic",
+                    "(google.api.resource_definition).pattern": "projects/{project}/topics/{topic}"
                   },
                   "nested": {
                     "SecurityMarks": {
@@ -3088,7 +3090,7 @@
                     },
                     "NotificationConfig": {
                       "options": {
-                        "(google.api.resource).type": "securitycenter.googleapis.com/Finding",
+                        "(google.api.resource).type": "securitycenter.googleapis.com/NotificationConfig",
                         "(google.api.resource).pattern": "organizations/{organization}/notificationConfigs/{notification_config}"
                       },
                       "oneofs": {
@@ -3999,8 +4001,7 @@
                           "type": "NotificationConfig",
                           "id": 1,
                           "options": {
-                            "(google.api.field_behavior)": "REQUIRED",
-                            "(google.api.resource_reference).type": "securitycenter.googleapis.com/NotificationConfig"
+                            "(google.api.field_behavior)": "REQUIRED"
                           }
                         },
                         "updateMask": {
