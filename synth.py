@@ -42,7 +42,7 @@ for version in versions:
 # Copy common templates
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(source_location='build/src')
-s.copy(templates, excludes=['.kokoro/samples-test.sh'])
+s.copy(templates, excludes=['.kokoro/samples-test.sh', '.kokoro/samples-test.sh'])
 
 # There's an internal tracking ticket for this generation bug b/148673437
 # we should remove this replacement hack as soon as it is addressed:
