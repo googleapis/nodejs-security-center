@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-01-31T19:10:44.739623Z",
+  "updateTime": "2020-01-31T20:18:11.351776Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-security-center.git",
-        "sha": "19688aa06f40883a0b131cde8be01c5b4bf94e7d"
+        "sha": "4fc5c903d2d61ce2055915caed04a4cbf13a6978"
       }
     },
     {
