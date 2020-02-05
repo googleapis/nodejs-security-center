@@ -44,24 +44,6 @@ common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(source_location='build/src')
 s.copy(templates, excludes=['.kokoro/samples-test.sh', '.kokoro/samples-test.sh'])
 
-# There's an internal tracking ticket for this generation bug b/148673437
-# we should remove this replacement hack as soon as it is addressed:
-s.replace("protos/google/cloud/securitycenter/v1p1beta1/notification_config.proto", r"""// The Pub/Sub Topic resource definition is in google/cloud/pubsub/v1/,
-// but we do not import that proto directly; therefore, we redefine the
-// pattern here.
-option \(google.api.resource_definition\) = {
-  type: "pubsub.googleapis.com/Topic"
-  pattern: "projects/{project}/topics/{topic}"
-};""", "")
-s.replace("protos/google/cloud/securitycenter/v1p1beta1/notification_config.proto", """"Google::Cloud::SecurityCenter::V1p1Beta1";""", """"Google::Cloud::SecurityCenter::V1p1Beta1";
-// The Pub/Sub Topic resource definition is in google/cloud/pubsub/v1/,
-// but we do not import that proto directly; therefore, we redefine the
-// pattern here.
-option (google.api.resource_definition) = {
-  type: "pubsub.googleapis.com/Topic"
-  pattern: "projects/{project}/topics/{topic}"
-};""")
-
 # Node.js specific cleanup
 subprocess.run(['npm', 'install'])
 subprocess.run(['npm', 'run', 'fix'])

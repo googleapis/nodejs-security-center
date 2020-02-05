@@ -112,6 +112,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ICreateSourceRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -134,6 +135,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ICreateSourceRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -158,6 +160,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ICreateFindingRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -180,6 +183,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ICreateFindingRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -204,6 +208,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.IGetIamPolicyRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -226,6 +231,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.IGetIamPolicyRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -250,6 +256,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGetOrganizationSettingsRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -272,6 +279,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGetOrganizationSettingsRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -299,6 +307,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGetSourceRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -321,6 +330,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGetSourceRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -345,6 +355,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ISetFindingStateRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -367,6 +378,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.ISetFindingStateRequest = {};
+      request.name = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -391,6 +403,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.ISetIamPolicyRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -413,6 +426,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.ISetIamPolicyRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -437,6 +451,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.ITestIamPermissionsRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -459,6 +474,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.iam.v1.ITestIamPermissionsRequest = {};
+      request.resource = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -686,6 +702,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IRunAssetDiscoveryRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -715,6 +732,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IRunAssetDiscoveryRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -747,6 +765,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGroupAssetsRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -773,8 +792,9 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGroupAssetsRequest = {};
+      request.parent = '';
       // Mock response
-      const expectedResponse = {};
+      const expectedResponse = {response: 'data'};
       // Mock Grpc layer
       client._innerApiCalls.groupAssets = (
         actualRequest: {},
@@ -793,7 +813,7 @@ describe('v1beta1.SecurityCenterClient', () => {
         .on('error', (err: FakeError) => {
           done(err);
         });
-      stream.write(request);
+      stream.write(expectedResponse);
     });
   });
   describe('groupFindings', () => {
@@ -804,6 +824,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGroupFindingsRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -830,8 +851,9 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IGroupFindingsRequest = {};
+      request.parent = '';
       // Mock response
-      const expectedResponse = {};
+      const expectedResponse = {response: 'data'};
       // Mock Grpc layer
       client._innerApiCalls.groupFindings = (
         actualRequest: {},
@@ -850,7 +872,7 @@ describe('v1beta1.SecurityCenterClient', () => {
         .on('error', (err: FakeError) => {
           done(err);
         });
-      stream.write(request);
+      stream.write(expectedResponse);
     });
   });
   describe('listAssets', () => {
@@ -861,6 +883,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListAssetsRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -887,8 +910,9 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListAssetsRequest = {};
+      request.parent = '';
       // Mock response
-      const expectedResponse = {};
+      const expectedResponse = {response: 'data'};
       // Mock Grpc layer
       client._innerApiCalls.listAssets = (
         actualRequest: {},
@@ -907,7 +931,7 @@ describe('v1beta1.SecurityCenterClient', () => {
         .on('error', (err: FakeError) => {
           done(err);
         });
-      stream.write(request);
+      stream.write(expectedResponse);
     });
   });
   describe('listFindings', () => {
@@ -918,6 +942,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListFindingsRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -944,8 +969,9 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListFindingsRequest = {};
+      request.parent = '';
       // Mock response
-      const expectedResponse = {};
+      const expectedResponse = {response: 'data'};
       // Mock Grpc layer
       client._innerApiCalls.listFindings = (
         actualRequest: {},
@@ -964,7 +990,7 @@ describe('v1beta1.SecurityCenterClient', () => {
         .on('error', (err: FakeError) => {
           done(err);
         });
-      stream.write(request);
+      stream.write(expectedResponse);
     });
   });
   describe('listSources', () => {
@@ -975,6 +1001,7 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListSourcesRequest = {};
+      request.parent = '';
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -1001,8 +1028,9 @@ describe('v1beta1.SecurityCenterClient', () => {
       });
       // Mock request
       const request: protosTypes.google.cloud.securitycenter.v1beta1.IListSourcesRequest = {};
+      request.parent = '';
       // Mock response
-      const expectedResponse = {};
+      const expectedResponse = {response: 'data'};
       // Mock Grpc layer
       client._innerApiCalls.listSources = (
         actualRequest: {},
@@ -1021,7 +1049,7 @@ describe('v1beta1.SecurityCenterClient', () => {
         .on('error', (err: FakeError) => {
           done(err);
         });
-      stream.write(request);
+      stream.write(expectedResponse);
     });
   });
 });

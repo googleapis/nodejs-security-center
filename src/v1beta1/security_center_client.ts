@@ -144,17 +144,23 @@ export class SecurityCenterClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
+      organizationAssetPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/assets/{asset}/securityMarks'
+      ),
+      organizationSourceFindingPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/sources/{source}/findings/{finding}/securityMarks'
+      ),
+      findingPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/sources/{source}/findings/{finding}'
+      ),
       sourcePathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}'
-      ),
-      organizationPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}'
       ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
       ),
-      findingPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/sources/{source}/findings/{finding}'
+      organizationPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}'
       ),
     };
 
@@ -2556,91 +2562,108 @@ export class SecurityCenterClient {
   // --------------------
 
   /**
-   * Return a fully-qualified source resource name string.
+   * Return a fully-qualified organizationAsset resource name string.
+   *
+   * @param {string} organization
+   * @param {string} asset
+   * @returns {string} Resource name string.
+   */
+  organizationAssetPath(organization: string, asset: string) {
+    return this._pathTemplates.organizationAssetPathTemplate.render({
+      organization,
+      asset,
+    });
+  }
+
+  /**
+   * Parse the organization from OrganizationAsset resource.
+   *
+   * @param {string} organizationAssetName
+   *   A fully-qualified path representing organization_asset resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromOrganizationAssetName(organizationAssetName: string) {
+    return this._pathTemplates.organizationAssetPathTemplate.match(
+      organizationAssetName
+    ).organization;
+  }
+
+  /**
+   * Parse the asset from OrganizationAsset resource.
+   *
+   * @param {string} organizationAssetName
+   *   A fully-qualified path representing organization_asset resource.
+   * @returns {string} A string representing the asset.
+   */
+  matchAssetFromOrganizationAssetName(organizationAssetName: string) {
+    return this._pathTemplates.organizationAssetPathTemplate.match(
+      organizationAssetName
+    ).asset;
+  }
+
+  /**
+   * Return a fully-qualified organizationSourceFinding resource name string.
    *
    * @param {string} organization
    * @param {string} source
+   * @param {string} finding
    * @returns {string} Resource name string.
    */
-  sourcePath(organization: string, source: string) {
-    return this._pathTemplates.sourcePathTemplate.render({
+  organizationSourceFindingPath(
+    organization: string,
+    source: string,
+    finding: string
+  ) {
+    return this._pathTemplates.organizationSourceFindingPathTemplate.render({
       organization,
       source,
+      finding,
     });
   }
 
   /**
-   * Parse the organization from Source resource.
+   * Parse the organization from OrganizationSourceFinding resource.
    *
-   * @param {string} sourceName
-   *   A fully-qualified path representing Source resource.
+   * @param {string} organizationSourceFindingName
+   *   A fully-qualified path representing organization_source_finding resource.
    * @returns {string} A string representing the organization.
    */
-  matchOrganizationFromSourceName(sourceName: string) {
-    return this._pathTemplates.sourcePathTemplate.match(sourceName)
-      .organization;
+  matchOrganizationFromOrganizationSourceFindingName(
+    organizationSourceFindingName: string
+  ) {
+    return this._pathTemplates.organizationSourceFindingPathTemplate.match(
+      organizationSourceFindingName
+    ).organization;
   }
 
   /**
-   * Parse the source from Source resource.
+   * Parse the source from OrganizationSourceFinding resource.
    *
-   * @param {string} sourceName
-   *   A fully-qualified path representing Source resource.
+   * @param {string} organizationSourceFindingName
+   *   A fully-qualified path representing organization_source_finding resource.
    * @returns {string} A string representing the source.
    */
-  matchSourceFromSourceName(sourceName: string) {
-    return this._pathTemplates.sourcePathTemplate.match(sourceName).source;
-  }
-
-  /**
-   * Return a fully-qualified organization resource name string.
-   *
-   * @param {string} organization
-   * @returns {string} Resource name string.
-   */
-  organizationPath(organization: string) {
-    return this._pathTemplates.organizationPathTemplate.render({
-      organization,
-    });
-  }
-
-  /**
-   * Parse the organization from Organization resource.
-   *
-   * @param {string} organizationName
-   *   A fully-qualified path representing Organization resource.
-   * @returns {string} A string representing the organization.
-   */
-  matchOrganizationFromOrganizationName(organizationName: string) {
-    return this._pathTemplates.organizationPathTemplate.match(organizationName)
-      .organization;
-  }
-
-  /**
-   * Return a fully-qualified organizationSettings resource name string.
-   *
-   * @param {string} organization
-   * @returns {string} Resource name string.
-   */
-  organizationSettingsPath(organization: string) {
-    return this._pathTemplates.organizationSettingsPathTemplate.render({
-      organization,
-    });
-  }
-
-  /**
-   * Parse the organization from OrganizationSettings resource.
-   *
-   * @param {string} organizationSettingsName
-   *   A fully-qualified path representing OrganizationSettings resource.
-   * @returns {string} A string representing the organization.
-   */
-  matchOrganizationFromOrganizationSettingsName(
-    organizationSettingsName: string
+  matchSourceFromOrganizationSourceFindingName(
+    organizationSourceFindingName: string
   ) {
-    return this._pathTemplates.organizationSettingsPathTemplate.match(
-      organizationSettingsName
-    ).organization;
+    return this._pathTemplates.organizationSourceFindingPathTemplate.match(
+      organizationSourceFindingName
+    ).source;
+  }
+
+  /**
+   * Parse the finding from OrganizationSourceFinding resource.
+   *
+   * @param {string} organizationSourceFindingName
+   *   A fully-qualified path representing organization_source_finding resource.
+   * @returns {string} A string representing the finding.
+   */
+  matchFindingFromOrganizationSourceFindingName(
+    organizationSourceFindingName: string
+  ) {
+    return this._pathTemplates.organizationSourceFindingPathTemplate.match(
+      organizationSourceFindingName
+    ).finding;
   }
 
   /**
@@ -2691,6 +2714,94 @@ export class SecurityCenterClient {
    */
   matchFindingFromFindingName(findingName: string) {
     return this._pathTemplates.findingPathTemplate.match(findingName).finding;
+  }
+
+  /**
+   * Return a fully-qualified source resource name string.
+   *
+   * @param {string} organization
+   * @param {string} source
+   * @returns {string} Resource name string.
+   */
+  sourcePath(organization: string, source: string) {
+    return this._pathTemplates.sourcePathTemplate.render({
+      organization,
+      source,
+    });
+  }
+
+  /**
+   * Parse the organization from Source resource.
+   *
+   * @param {string} sourceName
+   *   A fully-qualified path representing Source resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromSourceName(sourceName: string) {
+    return this._pathTemplates.sourcePathTemplate.match(sourceName)
+      .organization;
+  }
+
+  /**
+   * Parse the source from Source resource.
+   *
+   * @param {string} sourceName
+   *   A fully-qualified path representing Source resource.
+   * @returns {string} A string representing the source.
+   */
+  matchSourceFromSourceName(sourceName: string) {
+    return this._pathTemplates.sourcePathTemplate.match(sourceName).source;
+  }
+
+  /**
+   * Return a fully-qualified organizationSettings resource name string.
+   *
+   * @param {string} organization
+   * @returns {string} Resource name string.
+   */
+  organizationSettingsPath(organization: string) {
+    return this._pathTemplates.organizationSettingsPathTemplate.render({
+      organization,
+    });
+  }
+
+  /**
+   * Parse the organization from OrganizationSettings resource.
+   *
+   * @param {string} organizationSettingsName
+   *   A fully-qualified path representing OrganizationSettings resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromOrganizationSettingsName(
+    organizationSettingsName: string
+  ) {
+    return this._pathTemplates.organizationSettingsPathTemplate.match(
+      organizationSettingsName
+    ).organization;
+  }
+
+  /**
+   * Return a fully-qualified organization resource name string.
+   *
+   * @param {string} organization
+   * @returns {string} Resource name string.
+   */
+  organizationPath(organization: string) {
+    return this._pathTemplates.organizationPathTemplate.render({
+      organization,
+    });
+  }
+
+  /**
+   * Parse the organization from Organization resource.
+   *
+   * @param {string} organizationName
+   *   A fully-qualified path representing Organization resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromOrganizationName(organizationName: string) {
+    return this._pathTemplates.organizationPathTemplate.match(organizationName)
+      .organization;
   }
 
   /**
