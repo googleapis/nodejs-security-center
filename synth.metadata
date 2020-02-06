@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-02-05T17:41:36.417979Z",
+  "updateTime": "2020-02-06T12:35:12.624491Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a8ed9d921fdddc61d8467bfd7c1668f0ad90435c",
-        "internalRef": "293257997"
+        "sha": "45d2a569ab526a1fad3720f95eefb1c7330eaada",
+        "internalRef": "293515675",
+        "log": "45d2a569ab526a1fad3720f95eefb1c7330eaada\nEnable client generation for v1 ManagedIdentities API.\n\nPiperOrigin-RevId: 293515675\n\n2c17086b77e6f3bcf04a1f65758dfb0c3da1568f\nAdd the Actions on Google common types (//google/actions/type/*).\n\nPiperOrigin-RevId: 293478245\n\n781aadb932e64a12fb6ead7cd842698d99588433\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293443396\n\ne2602608c9138c2fca24162720e67f9307c30b95\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293442964\n\nc8aef82028d06b7992278fa9294c18570dc86c3d\nAdd cc_proto_library and cc_grpc_library targets for Bigtable protos.\n\nAlso fix indentation of cc_grpc_library targets in Spanner and IAM protos.\n\nPiperOrigin-RevId: 293440538\n\ne2faab04f4cb7f9755072330866689b1943a16e9\ncloudtasks: v2 replace non-standard retry params in gapic config v2\n\nPiperOrigin-RevId: 293424055\n\ndfb4097ea628a8470292c6590a4313aee0c675bd\nerrorreporting: v1beta1 add legacy artman config for php\n\nPiperOrigin-RevId: 293423790\n\nb18aed55b45bfe5b62476292c72759e6c3e573c6\nasset: v1p1beta1 updated comment for `page_size` limit.\n\nPiperOrigin-RevId: 293421386\n\nc9ef36b7956d9859a2fc86ad35fcaa16958ab44f\nbazel: Refactor CI build scripts\n\nPiperOrigin-RevId: 293387911\n\n"
       }
     },
     {
       "template": {
         "name": "node_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ],

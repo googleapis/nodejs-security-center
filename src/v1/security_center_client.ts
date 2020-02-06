@@ -153,11 +153,11 @@ export class SecurityCenterClient {
       findingPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}/findings/{finding}'
       ),
-      sourcePathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/sources/{source}'
-      ),
       assetPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/assets/{asset}'
+      ),
+      sourcePathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/sources/{source}'
       ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
@@ -3093,6 +3093,42 @@ export class SecurityCenterClient {
   }
 
   /**
+   * Return a fully-qualified asset resource name string.
+   *
+   * @param {string} organization
+   * @param {string} asset
+   * @returns {string} Resource name string.
+   */
+  assetPath(organization: string, asset: string) {
+    return this._pathTemplates.assetPathTemplate.render({
+      organization,
+      asset,
+    });
+  }
+
+  /**
+   * Parse the organization from Asset resource.
+   *
+   * @param {string} assetName
+   *   A fully-qualified path representing Asset resource.
+   * @returns {string} A string representing the organization.
+   */
+  matchOrganizationFromAssetName(assetName: string) {
+    return this._pathTemplates.assetPathTemplate.match(assetName).organization;
+  }
+
+  /**
+   * Parse the asset from Asset resource.
+   *
+   * @param {string} assetName
+   *   A fully-qualified path representing Asset resource.
+   * @returns {string} A string representing the asset.
+   */
+  matchAssetFromAssetName(assetName: string) {
+    return this._pathTemplates.assetPathTemplate.match(assetName).asset;
+  }
+
+  /**
    * Return a fully-qualified source resource name string.
    *
    * @param {string} organization
@@ -3127,42 +3163,6 @@ export class SecurityCenterClient {
    */
   matchSourceFromSourceName(sourceName: string) {
     return this._pathTemplates.sourcePathTemplate.match(sourceName).source;
-  }
-
-  /**
-   * Return a fully-qualified asset resource name string.
-   *
-   * @param {string} organization
-   * @param {string} asset
-   * @returns {string} Resource name string.
-   */
-  assetPath(organization: string, asset: string) {
-    return this._pathTemplates.assetPathTemplate.render({
-      organization,
-      asset,
-    });
-  }
-
-  /**
-   * Parse the organization from Asset resource.
-   *
-   * @param {string} assetName
-   *   A fully-qualified path representing Asset resource.
-   * @returns {string} A string representing the organization.
-   */
-  matchOrganizationFromAssetName(assetName: string) {
-    return this._pathTemplates.assetPathTemplate.match(assetName).organization;
-  }
-
-  /**
-   * Parse the asset from Asset resource.
-   *
-   * @param {string} assetName
-   *   A fully-qualified path representing Asset resource.
-   * @returns {string} A string representing the asset.
-   */
-  matchAssetFromAssetName(assetName: string) {
-    return this._pathTemplates.assetPathTemplate.match(assetName).asset;
   }
 
   /**
