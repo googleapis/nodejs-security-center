@@ -16,8 +16,9 @@
 function main(organizationId = 'your-org-id') {
   // [END scc_list_notification_configs]
   // npm install @google-cloud/security-center/
-  const {SecurityCenterClient} =
-      require('@google-cloud/security-center').v1p1beta1;
+  const {
+    SecurityCenterClient,
+  } = require('@google-cloud/security-center').v1p1beta1;
 
   const client = new SecurityCenterClient();
 
@@ -25,16 +26,10 @@ function main(organizationId = 'your-org-id') {
   const orgName = client.organizationPath(organizationId);
 
   async function listNotificationConfigs() {
-    client.listNotificationConfigs({parent: orgName})
-        .then(responses => {
-          const resources = responses[0];
-          for (const resource of resources) {
-            console.log(resource);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
+    const [resources] = await client.listNotificationConfigs({parent: orgName});
+    for (const resource of resources) {
+      console.log(resource);
+    }
   }
 
   listNotificationConfigs();

@@ -16,19 +16,23 @@
 function main(organizationId = 'your-org-id', configId = 'your-config-id') {
   // [START scc_get_notification_configs]
   // npm install @google-cloud/security-center/
-  const {SecurityCenterClient} =
-      require('@google-cloud/security-center').v1p1beta1;
+  const {
+    SecurityCenterClient,
+  } = require('@google-cloud/security-center').v1p1beta1;
 
   const client = new SecurityCenterClient();
 
   // TODO(UpdateMe) organizationId = "your-org-id";
   // TODO(UpdateMe) configId = "your-config-id";
-  const formattedConfigName =
-      client.notificationConfigPath(organizationId, configId);
+  const formattedConfigName = client.notificationConfigPath(
+    organizationId,
+    configId
+  );
 
   async function getNotificationConfg() {
-    const [response] =
-        await client.getNotificationConfig({name: formattedConfigName});
+    const [response] = await client.getNotificationConfig({
+      name: formattedConfigName,
+    });
     console.log('Notification config: ', response);
   }
 

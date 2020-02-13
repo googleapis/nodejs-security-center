@@ -16,18 +16,21 @@
 function main(organizationId = 'your-org-id', configId = 'your-config-id') {
   // [START scc_delete_notification_config]
   // npm install @google-cloud/security-center/
-  const {SecurityCenterClient} =
-      require('@google-cloud/security-center').v1p1beta1;
+  const {
+    SecurityCenterClient,
+  } = require('@google-cloud/security-center').v1p1beta1;
 
   const client = new SecurityCenterClient();
 
   // TODO(UpdateMe) organizationId = "your-org-id";
   // TODO(UpdateMe) configId = "your-config-id";
-  const formattedConfigName =
-      client.notificationConfigPath(organizationId, configId);
+  const formattedConfigName = client.notificationConfigPath(
+    organizationId,
+    configId
+  );
 
   async function deleteNotificationConfg() {
-    client.deleteNotificationConfig({name: formattedConfigName});
+    await client.deleteNotificationConfig({name: formattedConfigName});
     console.log('Notification config deleted: ', formattedConfigName);
   }
 

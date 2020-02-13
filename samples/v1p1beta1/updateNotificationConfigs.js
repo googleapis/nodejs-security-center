@@ -14,19 +14,24 @@
 'use strict';
 
 function main(
-    organizationId = 'your-org-id', configId = 'your-config-name',
-    pubsubTopic = 'projects/{your-project}/topics/{your-topic}') {
+  organizationId = 'your-org-id',
+  configId = 'your-config-name',
+  pubsubTopic = 'projects/{your-project}/topics/{your-topic}'
+) {
   // [START scc_update_notification_config]
   // npm install @google-cloud/security-center/
-  const {SecurityCenterClient} =
-      require('@google-cloud/security-center').v1p1beta1;
+  const {
+    SecurityCenterClient,
+  } = require('@google-cloud/security-center').v1p1beta1;
 
   const client = new SecurityCenterClient();
 
   // TODO(UpdateMe) organizationId = "";
   // TODO(UpdateMe) configId = "";
-  const formattedConfigName =
-      client.notificationConfigPath(organizationId, configId);
+  const formattedConfigName = client.notificationConfigPath(
+    organizationId,
+    configId
+  );
 
   // TODO(UpdateMe) pubsubTopic = "projects/{your-project}/topics/{your-topic}";
   // Ensure this Service Account has the "pubsub.topics.setIamPolicy" permission on this topic.
@@ -38,7 +43,7 @@ function main(
         name: formattedConfigName,
         description: 'Updated config description',
         pubsubTopic: pubsubTopic,
-      }
+      },
     });
     console.log('notification config update succeeded: ', response);
   }

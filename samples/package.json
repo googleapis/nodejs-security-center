@@ -14,11 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@google-cloud/pubsub": "^1.5.0",
-    "@google-cloud/security-center": "^3.0.1",
-    "google-gax": "^1.14.1",
-    "google-proto-files": "^1.1.2",
-    "path": "^0.12.7",
-    "protobufjs": "^6.8.8"
+    "@google-cloud/security-center": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
