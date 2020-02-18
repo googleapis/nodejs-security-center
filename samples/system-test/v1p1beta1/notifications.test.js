@@ -91,7 +91,7 @@ describe('Client with Notifications', async () => {
 
   it('client can list configs', () => {
     const output =
-        exec(`node v1p1beta1/listNotificationConfig.js ${organizationId}`)
+        exec(`node v1p1beta1/listNotificationConfigs.js ${organizationId}`)
     assert.match(output, new RegExp(listConfig));
     assert.match(output, /Received Notification configs/);
     assert.notMatch(output, /undefined/);
