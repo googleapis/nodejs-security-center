@@ -26,9 +26,9 @@ function main(
 
   const client = new SecurityCenterClient();
 
-  // TODO(UpdateMe) organizationId = "your-org-id";
-  // TODO(UpdateMe) configId = "your-config-name";
-  // TODO(UpdateMe) pubsubTopic = "projects/{your-project}/topics/{your-topic}";
+  // organizationId = "your-org-id";
+  // configId = "your-config-name";
+  // pubsubTopic = "projects/{your-project}/topics/{your-topic}";
   // Ensure this Service Account has the "pubsub.topics.setIamPolicy" permission on this topic.
 
   const orgName = client.organizationPath(organizationId);

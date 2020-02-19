@@ -71,6 +71,9 @@ function main(
     'google.cloud.securitycenter.v1p1beta1.Finding'
   );
 
+  // projectId = 'your-project-id'
+  // subscriptionId = 'your-subscription-id'
+
   const subscriptionName =
     'projects/' + projectId + '/subscriptions/' + subscriptionId;
   const pubSubClient = new PubSub();

@@ -26,14 +26,14 @@ function main(
 
   const client = new SecurityCenterClient();
 
-  // TODO(UpdateMe) organizationId = "";
-  // TODO(UpdateMe) configId = "";
+  // organizationId = "your-org-id";
+  // configId = "your-config-id";
   const formattedConfigName = client.notificationConfigPath(
     organizationId,
     configId
   );
 
-  // TODO(UpdateMe) pubsubTopic = "projects/{your-project}/topics/{your-topic}";
+  // pubsubTopic = "projects/{your-project}/topics/{your-topic}";
   // Ensure this Service Account has the "pubsub.topics.setIamPolicy" permission on this topic.
 
   async function updateNotificationConfig() {

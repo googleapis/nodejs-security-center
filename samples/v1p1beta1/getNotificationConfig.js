@@ -22,8 +22,8 @@ function main(organizationId = 'your-org-id', configId = 'your-config-id') {
 
   const client = new SecurityCenterClient();
 
-  // TODO(UpdateMe) organizationId = "your-org-id";
-  // TODO(UpdateMe) configId = "your-config-id";
+  // organizationId = "your-org-id";
+  // configId = "your-config-id";
   const formattedConfigName = client.notificationConfigPath(
     organizationId,
     configId

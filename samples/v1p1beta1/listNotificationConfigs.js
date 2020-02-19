@@ -22,7 +22,7 @@ function main(organizationId = 'your-org-id') {
 
   const client = new SecurityCenterClient();
 
-  // TODO(UpdateMe) organizationId = "your-org-id";
+  // organizationId = "your-org-id";
   const orgName = client.organizationPath(organizationId);
 
   async function listNotificationConfigs() {
