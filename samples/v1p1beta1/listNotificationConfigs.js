@@ -27,7 +27,7 @@ function main(organizationId = 'your-org-id') {
 
   async function listNotificationConfigs() {
     const [resources] = await client.listNotificationConfigs({parent: orgName});
-    console.log("Received Notification configs: ");
+    console.log('Received Notification configs: ');
     for (const resource of resources) {
       console.log(resource);
     }
