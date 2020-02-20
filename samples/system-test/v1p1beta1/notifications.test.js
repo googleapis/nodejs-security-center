@@ -50,10 +50,10 @@ describe('Client with Notifications', async () => {
       });
     }
 
-    createNotificationConfig(deleteConfig);
-    createNotificationConfig(getConfig);
-    createNotificationConfig(listConfig);
-    createNotificationConfig(updateConfig);
+    await createNotificationConfig(deleteConfig);
+    await createNotificationConfig(getConfig);
+    await createNotificationConfig(listConfig);
+    await createNotificationConfig(updateConfig);
   });
 
   after(async () => {
@@ -63,10 +63,10 @@ describe('Client with Notifications', async () => {
       await client.deleteNotificationConfig({name: name});
     }
 
-    deleteNotificationConfig(createConfig);
-    deleteNotificationConfig(getConfig);
-    deleteNotificationConfig(listConfig);
-    deleteNotificationConfig(updateConfig);
+    await deleteNotificationConfig(createConfig);
+    await deleteNotificationConfig(getConfig);
+    await deleteNotificationConfig(listConfig);
+    await deleteNotificationConfig(updateConfig);
   });
 
   it('client can create config', () => {
@@ -82,7 +82,7 @@ describe('Client with Notifications', async () => {
     const output = exec(
       `node v1p1beta1/deleteNotificationConfig.js ${organizationId} ${deleteConfig}`
     );
-    assert.include(output, "Notification config deleted");
+    assert.include(output, 'Notification config deleted');
     assert.notMatch(output, /undefined/);
   });
 
