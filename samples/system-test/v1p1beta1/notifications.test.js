@@ -82,13 +82,13 @@ describe('Client with Notifications', async () => {
     const output = exec(
       `node v1p1beta1/deleteNotificationConfig.js ${organizationId} ${deleteConfig}`
     );
-    assert.match(output, /Notification config delete/);
+    assert.include(output, "Notification config deleted");
     assert.notMatch(output, /undefined/);
   });
 
   it('client can get config', () => {
     const output = exec(
-      `node v1p1beta1/getNotificationConfig.js ${organizationId} ${createConfig}`
+      `node v1p1beta1/getNotificationConfig.js ${organizationId} ${getConfig}`
     );
     assert.include(output, getConfig);
     assert.match(output, /Notification config/);
@@ -106,7 +106,7 @@ describe('Client with Notifications', async () => {
 
   it('client can update configs', () => {
     const output = exec(
-      `node v1p1beta1/updateNotificationConfig.js ${organizationId} ${createConfig} ${pubsubTopic}`
+      `node v1p1beta1/updateNotificationConfig.js ${organizationId} ${updateConfig} ${pubsubTopic}`
     );
     assert.include(output, updateConfig);
     assert.match(output, /notification config update succeeded/);
