@@ -25,7 +25,7 @@ const exec = cmd => execSync(cmd, {encoding: 'utf8'});
 
 const organizationId = process.env['GCLOUD_ORGANIZATION'];
 const orgName = 'organizations/' + organizationId;
-const pubsubTopic = 'projects/project-a-id/topics/notification-sample-topic';
+const pubsubTopic = 'projects/project-a-id/topics/notifications-sample-topic';
 
 describe('Client with Notifications', async () => {
   const createConfig = 'notif-config-test-node-create' + uuidv1();
