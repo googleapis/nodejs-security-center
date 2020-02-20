@@ -21,56 +21,6 @@ function main(
   const {PubSub} = require('@google-cloud/pubsub');
   const {StringDecoder} = require('string_decoder');
 
-  const gax = require('google-gax');
-  const path = require('path');
-  const protobuf = require('protobufjs');
-
-  let protoFilesRoot = new gax.GoogleProtoFilesRoot();
-  // Load in proto root for Finding.
-  protoFilesRoot = protobuf.loadSync(
-    path.join(
-      __dirname,
-      '..',
-      'node_modules',
-      '@google-cloud',
-      'security-center',
-      'build',
-      'protos',
-      'google',
-      'cloud',
-      'securitycenter',
-      'v1p1beta1',
-      'securitycenter_service.proto'
-    ),
-    protoFilesRoot
-  );
-
-  // Load in proto root for NotificationMessage.
-  protoFilesRoot = protobuf.loadSync(
-    path.join(
-      __dirname,
-      '..',
-      'node_modules',
-      '@google-cloud',
-      'security-center',
-      'build',
-      'protos',
-      'google',
-      'cloud',
-      'securitycenter',
-      'v1p1beta1',
-      'notification_message.proto'
-    ),
-    protoFilesRoot
-  );
-
-  const NotificationMessage = protoFilesRoot.lookup(
-    'google.cloud.securitycenter.v1p1beta1.NotificationMessage'
-  );
-  const Finding = protoFilesRoot.lookup(
-    'google.cloud.securitycenter.v1p1beta1.Finding'
-  );
-
   // projectId = 'your-project-id'
   // subscriptionId = 'your-subscription-id'
 
@@ -86,13 +36,10 @@ function main(
     // 2. Convert json to NotificationMessage object
     const messageHandler = message => {
       const jsonString = new StringDecoder('utf-8').write(message.data);
-      const parsedNotificationMessage = NotificationMessage.create(
-        JSON.parse(jsonString)
-      );
-      const parsedFinding = Finding.create(parsedNotificationMessage.finding);
+      const parsedNotificationMessage = JSON.parse(jsonString);
 
       console.log(parsedNotificationMessage);
-      console.log(parsedFinding);
+      console.log(parsedNotificationMessage.finding);
 
       // ACK when done with message
       message.ack();
@@ -100,10 +47,10 @@ function main(
 
     subscription.on('message', messageHandler);
 
-    // Set timeout to 1 minute
+    // Set timeout to 10 seconds
     setTimeout(() => {
       subscription.removeListener('message', messageHandler);
-    }, 60000);
+    }, 10000);
   }
 
   listenForMessages();
