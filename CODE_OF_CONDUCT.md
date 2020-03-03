@@ -21,7 +21,7 @@ Examples of unacceptable behavior by participants include:
 * Publishing other's private information,
 such as physical or electronic
 addresses, without explicit permission
-* Other unethical or unprofessional conduct.
+* Other unethical or unprofessional conduct
 
 Project maintainers have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions
