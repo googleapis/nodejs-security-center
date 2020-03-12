@@ -15,7 +15,7 @@
 'use strict';
 
 const {
-  SecurityCenterClient,
+  SecurityCenterClient
 } = require('@google-cloud/security-center');
 const uuidv1 = require('uuid').v1;
 const {assert} = require('chai');
@@ -95,9 +95,7 @@ describe('Client with Notifications', async () => {
   });
 
   it('client can list configs', () => {
-    const output = exec(
-      `node v1/listNotificationConfigs.js ${organizationId}`
-    );
+    const output = exec(`node v1/listNotificationConfigs.js ${organizationId}`);
     assert.include(output, listConfig);
     assert.match(output, /Received Notification configs/);
     assert.notMatch(output, /undefined/);

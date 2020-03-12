@@ -17,7 +17,7 @@ function main(organizationId = 'your-org-id') {
   // [START scc_list_notification_configs]
   // npm install @google-cloud/security-center/
   const {
-    SecurityCenterClient,
+    SecurityCenterClient
   } = require('@google-cloud/security-center');
 
   const client = new SecurityCenterClient();
