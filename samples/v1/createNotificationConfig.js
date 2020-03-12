@@ -22,7 +22,7 @@ function main(
   // npm install @google-cloud/security-center/
   const {
     SecurityCenterClient,
-  } = require('@google-cloud/security-center').v1p1beta1;
+  } = require('@google-cloud/security-center');
 
   const client = new SecurityCenterClient();
 
@@ -40,7 +40,6 @@ function main(
       notificationConfig: {
         description: 'Sample config for node.js',
         pubsubTopic: pubsubTopic,
-        eventType: 'FINDING',
         streamingConfig: {filter: 'state = "ACTIVE"'},
       },
     });

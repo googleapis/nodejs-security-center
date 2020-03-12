@@ -13,29 +13,28 @@
 // limitations under the License.
 'use strict';
 
-function main(organizationId = 'your-org-id', configId = 'your-config-id') {
-  // [START scc_delete_notification_config]
+function main(organizationId = 'your-org-id') {
+  // [START scc_list_notification_configs]
   // npm install @google-cloud/security-center/
   const {
     SecurityCenterClient,
-  } = require('@google-cloud/security-center').v1p1beta1;
+  } = require('@google-cloud/security-center');
 
   const client = new SecurityCenterClient();
 
   // organizationId = "your-org-id";
-  // configId = "your-config-id";
-  const formattedConfigName = client.notificationConfigPath(
-    organizationId,
-    configId
-  );
+  const orgName = client.organizationPath(organizationId);
 
-  async function deleteNotificationConfg() {
-    await client.deleteNotificationConfig({name: formattedConfigName});
-    console.log('Notification config deleted: ', formattedConfigName);
+  async function listNotificationConfigs() {
+    const [resources] = await client.listNotificationConfigs({parent: orgName});
+    console.log('Received Notification configs: ');
+    for (const resource of resources) {
+      console.log(resource);
+    }
   }
 
-  deleteNotificationConfg();
-  // [END scc_delete_notification_config]
+  listNotificationConfigs();
+  // [END scc_list_notification_configs]
 }
 
 main(...process.argv.slice(2));
