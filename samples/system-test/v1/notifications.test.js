@@ -14,9 +14,7 @@
 
 'use strict';
 
-const {
-  SecurityCenterClient
-} = require('@google-cloud/security-center');
+const {SecurityCenterClient} = require('@google-cloud/security-center');
 const uuidv1 = require('uuid').v1;
 const {assert} = require('chai');
 const {describe, it, before, after} = require('mocha');
