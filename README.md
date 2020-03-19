@@ -63,23 +63,23 @@ npm install @google-cloud/security-center
 ### Using the client library
 
 ```javascript
-  const sc = require('@google-cloud/security-center');
+const sc = require('@google-cloud/security-center');
 
-  // Create a client
-  const client = new sc.SecurityCenterClient();
+// Create a client
+const client = new sc.SecurityCenterClient();
 
-  async function quickstart() {
-    // TODO(developer): choose the organization to use
-    // const organization = 'your-organization';
-    const [source] = await client.createSource({
-      parent: client.organizationPath(organization),
-      source: {},
-    });
-    // The newly created source.
-    console.log('Source created.');
-    console.log(source);
-  }
-  quickstart();
+async function quickstart() {
+  // TODO(developer): choose the organization to use
+  // const organization = 'your-organization';
+  const [source] = await client.createSource({
+    parent: client.organizationPath(organization),
+    source: {},
+  });
+  // The newly created source.
+  console.log('Source created.');
+  console.log(source);
+}
+quickstart();
 
 ```
 
@@ -122,11 +122,13 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/nodejs-security-center/blob/master/CONTRIBUTING.md).
 
-Please note that this `README.md`, the `samples/README.md`,
+Please note that this [README.md](README.md), the [samples/README.md](samples/README.md),
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
-are generated from a central template. To edit one of these files, make an edit
-to its template in this
-[directory](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
+are generated from a central template.
+
+If you would like to make edits to one of those files
+(or if you aren't certain if the file you're changing is one, check in the template repository before making changes),
+look for the file in the [template](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
 
 ## License
 
