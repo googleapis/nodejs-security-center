@@ -41,7 +41,7 @@
     "Security Command Center API"
   ],
   "dependencies": {
-    "google-gax": "^1.14.1"
+    "google-gax": "^2.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^7.0.0",
