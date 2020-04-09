@@ -1,6 +1,13 @@
 {
-  "updateTime": "2020-04-03T12:08:21.889817Z",
+  "updateTime": "2020-04-09T13:23:05.175606Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/nodejs-security-center.git",
+        "sha": "aa6257554e5b401ba7b7613f0bf78d6233ef300b"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
