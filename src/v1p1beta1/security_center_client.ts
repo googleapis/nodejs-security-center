@@ -1498,7 +1498,6 @@ export class SecurityCenterClient {
     >
   ): void;
   /**
-   *
    * Creates or updates a finding. The corresponding source must exist for a
    * finding creation to succeed.
    *
@@ -2193,15 +2192,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -2216,6 +2215,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping.
    *   The string value should follow SQL syntax: comma separated list of fields.
@@ -2268,10 +2273,6 @@ export class SecurityCenterClient {
    *   to assets existing at the supplied time and their values are those at that
    *   specific time. Absence of this field will default to the API's version of
    *   NOW.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupAssetsResponse`; indicates
    *   that this is a continuation of a prior `GroupAssets` call, and that the
@@ -2394,15 +2395,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -2417,6 +2418,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping.
    *   The string value should follow SQL syntax: comma separated list of fields.
@@ -2469,10 +2476,6 @@ export class SecurityCenterClient {
    *   to assets existing at the supplied time and their values are those at that
    *   specific time. Absence of this field will default to the API's version of
    *   NOW.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupAssetsResponse`; indicates
    *   that this is a continuation of a prior `GroupAssets` call, and that the
@@ -2551,15 +2554,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -2574,6 +2577,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping.
    *   The string value should follow SQL syntax: comma separated list of fields.
@@ -2626,10 +2635,6 @@ export class SecurityCenterClient {
    *   to assets existing at the supplied time and their values are those at that
    *   specific time. Absence of this field will default to the API's version of
    *   NOW.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupAssetsResponse`; indicates
    *   that this is a continuation of a prior `GroupAssets` call, and that the
@@ -2748,13 +2753,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   * security_marks.marks: `=`, `:`
    *   * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping
    *   (including `state_change`). The string value should follow SQL syntax:
@@ -2789,12 +2800,18 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all findings present
@@ -2802,10 +2819,6 @@ export class SecurityCenterClient {
    *
    *   If this field is set then `state_change` must be a specified field in
    *   `group_by`.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupFindingsResponse`; indicates
    *   that this is a continuation of a prior `GroupFindings` call, and
@@ -2933,13 +2946,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   * security_marks.marks: `=`, `:`
    *   * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping
    *   (including `state_change`). The string value should follow SQL syntax:
@@ -2974,12 +2993,18 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all findings present
@@ -2987,10 +3012,6 @@ export class SecurityCenterClient {
    *
    *   If this field is set then `state_change` must be a specified field in
    *   `group_by`.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupFindingsResponse`; indicates
    *   that this is a continuation of a prior `GroupFindings` call, and
@@ -3074,13 +3095,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   * security_marks.marks: `=`, `:`
    *   * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.groupBy
    *   Required. Expression that defines what assets fields to use for grouping
    *   (including `state_change`). The string value should follow SQL syntax:
@@ -3115,12 +3142,18 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all findings present
@@ -3128,10 +3161,6 @@ export class SecurityCenterClient {
    *
    *   If this field is set then `state_change` must be a specified field in
    *   `group_by`.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {string} request.pageToken
    *   The value returned by the last `GroupFindingsResponse`; indicates
    *   that this is a continuation of a prior `GroupFindings` call, and
@@ -3241,15 +3270,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -3264,6 +3293,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3316,10 +3351,6 @@ export class SecurityCenterClient {
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all assets present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the ListAssetsResult fields to be listed in the
@@ -3447,15 +3478,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -3470,6 +3501,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3522,10 +3559,6 @@ export class SecurityCenterClient {
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all assets present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the ListAssetsResult fields to be listed in the
@@ -3609,15 +3642,15 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "update_time = \"2019-06-10T16:07:18-07:00\""
-   *       "update_time = 1560208038000"
+   *       `update_time = "2019-06-10T16:07:18-07:00"`
+   *       `update_time = 1560208038000`
    *
    *   * create_time: `=`, `>`, `<`, `>=`, `<=`
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "create_time = \"2019-06-10T16:07:18-07:00\""
-   *       "create_time = 1560208038000"
+   *       `create_time = "2019-06-10T16:07:18-07:00"`
+   *       `create_time = 1560208038000`
    *
    *   * iam_policy.policy_blob: `=`, `:`
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -3632,6 +3665,12 @@ export class SecurityCenterClient {
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `resource_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-resource_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3684,10 +3723,6 @@ export class SecurityCenterClient {
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all assets present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `state_change` is supported and
-   *   requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the ListAssetsResult fields to be listed in the
@@ -3812,13 +3847,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   security_marks.marks: `=`, `:`
    *   source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3858,20 +3899,22 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED", which will be the state_change set for all findings present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the Finding fields to be listed in the response.
@@ -4003,13 +4046,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   security_marks.marks: `=`, `:`
    *   source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -4049,20 +4098,22 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED", which will be the state_change set for all findings present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the Finding fields to be listed in the response.
@@ -4150,13 +4201,19 @@ export class SecurityCenterClient {
    *
    *     Usage: This should be milliseconds since epoch or an RFC3339 string.
    *     Examples:
-   *       "event_time = \"2019-06-10T16:07:18-07:00\""
-   *       "event_time = 1560208038000"
+   *       `event_time = "2019-06-10T16:07:18-07:00"`
+   *       `event_time = 1560208038000`
    *
    *   security_marks.marks: `=`, `:`
    *   source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
    * @param {string} request.orderBy
    *   Expression that defines what fields and order to use for sorting. The
    *   string value should follow SQL syntax: comma separated list of fields. For
@@ -4196,20 +4253,22 @@ export class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED", which will be the state_change set for all findings present at
    *   read_time.
-   * @param {string} request.having
-   *   Filter that specifies what fields to further filter on *after* the query
-   *   filter has been executed. Currently only `finding.state` and `state_change`
-   *   are supported and requires compare_duration to be specified.
    * @param {google.protobuf.FieldMask} [request.fieldMask]
    *   Optional.
    *   A field mask to specify the Finding fields to be listed in the response.
