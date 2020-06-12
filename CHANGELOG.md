@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/security-center?activeTab=versions
 
+### [4.0.1](https://www.github.com/googleapis/nodejs-security-center/compare/v4.0.0...v4.0.1) (2020-06-12)
+
+
+### Bug Fixes
+
+* handle fallback option properly ([#284](https://www.github.com/googleapis/nodejs-security-center/issues/284)) ([f714260](https://www.github.com/googleapis/nodejs-security-center/commit/f71426053da4eb2416ebd593862e89c0d5557827))
+
 ## [4.0.0](https://www.github.com/googleapis/nodejs-security-center/compare/v3.1.0...v4.0.0) (2020-06-04)
 
 
