@@ -845,6 +845,9 @@ export namespace google {
 
                     /** NotificationMessage finding */
                     finding?: (google.cloud.securitycenter.v1.IFinding|null);
+
+                    /** NotificationMessage resource */
+                    resource?: (google.cloud.securitycenter.v1.IResource|null);
                 }
 
                 /** Represents a NotificationMessage. */
@@ -861,6 +864,9 @@ export namespace google {
 
                     /** NotificationMessage finding. */
                     public finding?: (google.cloud.securitycenter.v1.IFinding|null);
+
+                    /** NotificationMessage resource. */
+                    public resource?: (google.cloud.securitycenter.v1.IResource|null);
 
                     /** NotificationMessage event. */
                     public event?: "finding";
@@ -931,6 +937,120 @@ export namespace google {
 
                     /**
                      * Converts this NotificationMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a Resource. */
+                interface IResource {
+
+                    /** Resource name */
+                    name?: (string|null);
+
+                    /** Resource project */
+                    project?: (string|null);
+
+                    /** Resource projectDisplayName */
+                    projectDisplayName?: (string|null);
+
+                    /** Resource parent */
+                    parent?: (string|null);
+
+                    /** Resource parentDisplayName */
+                    parentDisplayName?: (string|null);
+                }
+
+                /** Represents a Resource. */
+                class Resource implements IResource {
+
+                    /**
+                     * Constructs a new Resource.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.securitycenter.v1.IResource);
+
+                    /** Resource name. */
+                    public name: string;
+
+                    /** Resource project. */
+                    public project: string;
+
+                    /** Resource projectDisplayName. */
+                    public projectDisplayName: string;
+
+                    /** Resource parent. */
+                    public parent: string;
+
+                    /** Resource parentDisplayName. */
+                    public parentDisplayName: string;
+
+                    /**
+                     * Creates a new Resource instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns Resource instance
+                     */
+                    public static create(properties?: google.cloud.securitycenter.v1.IResource): google.cloud.securitycenter.v1.Resource;
+
+                    /**
+                     * Encodes the specified Resource message. Does not implicitly {@link google.cloud.securitycenter.v1.Resource.verify|verify} messages.
+                     * @param message Resource message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.securitycenter.v1.IResource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified Resource message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.Resource.verify|verify} messages.
+                     * @param message Resource message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.securitycenter.v1.IResource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a Resource message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns Resource
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.securitycenter.v1.Resource;
+
+                    /**
+                     * Decodes a Resource message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns Resource
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.securitycenter.v1.Resource;
+
+                    /**
+                     * Verifies a Resource message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a Resource message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns Resource
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.securitycenter.v1.Resource;
+
+                    /**
+                     * Creates a plain object from a Resource message. Also converts values to other types if specified.
+                     * @param message Resource
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.securitycenter.v1.Resource, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this Resource to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };

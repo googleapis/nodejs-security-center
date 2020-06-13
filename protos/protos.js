@@ -2177,6 +2177,7 @@
                          * @interface INotificationMessage
                          * @property {string|null} [notificationConfigName] NotificationMessage notificationConfigName
                          * @property {google.cloud.securitycenter.v1.IFinding|null} [finding] NotificationMessage finding
+                         * @property {google.cloud.securitycenter.v1.IResource|null} [resource] NotificationMessage resource
                          */
     
                         /**
@@ -2209,6 +2210,14 @@
                          * @instance
                          */
                         NotificationMessage.prototype.finding = null;
+    
+                        /**
+                         * NotificationMessage resource.
+                         * @member {google.cloud.securitycenter.v1.IResource|null|undefined} resource
+                         * @memberof google.cloud.securitycenter.v1.NotificationMessage
+                         * @instance
+                         */
+                        NotificationMessage.prototype.resource = null;
     
                         // OneOf field names bound to virtual getters and setters
                         var $oneOfFields;
@@ -2252,6 +2261,8 @@
                                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.notificationConfigName);
                             if (message.finding != null && Object.hasOwnProperty.call(message, "finding"))
                                 $root.google.cloud.securitycenter.v1.Finding.encode(message.finding, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.resource != null && Object.hasOwnProperty.call(message, "resource"))
+                                $root.google.cloud.securitycenter.v1.Resource.encode(message.resource, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                             return writer;
                         };
     
@@ -2291,6 +2302,9 @@
                                     break;
                                 case 2:
                                     message.finding = $root.google.cloud.securitycenter.v1.Finding.decode(reader, reader.uint32());
+                                    break;
+                                case 3:
+                                    message.resource = $root.google.cloud.securitycenter.v1.Resource.decode(reader, reader.uint32());
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -2339,6 +2353,11 @@
                                         return "finding." + error;
                                 }
                             }
+                            if (message.resource != null && message.hasOwnProperty("resource")) {
+                                var error = $root.google.cloud.securitycenter.v1.Resource.verify(message.resource);
+                                if (error)
+                                    return "resource." + error;
+                            }
                             return null;
                         };
     
@@ -2361,6 +2380,11 @@
                                     throw TypeError(".google.cloud.securitycenter.v1.NotificationMessage.finding: object expected");
                                 message.finding = $root.google.cloud.securitycenter.v1.Finding.fromObject(object.finding);
                             }
+                            if (object.resource != null) {
+                                if (typeof object.resource !== "object")
+                                    throw TypeError(".google.cloud.securitycenter.v1.NotificationMessage.resource: object expected");
+                                message.resource = $root.google.cloud.securitycenter.v1.Resource.fromObject(object.resource);
+                            }
                             return message;
                         };
     
@@ -2377,8 +2401,10 @@
                             if (!options)
                                 options = {};
                             var object = {};
-                            if (options.defaults)
+                            if (options.defaults) {
                                 object.notificationConfigName = "";
+                                object.resource = null;
+                            }
                             if (message.notificationConfigName != null && message.hasOwnProperty("notificationConfigName"))
                                 object.notificationConfigName = message.notificationConfigName;
                             if (message.finding != null && message.hasOwnProperty("finding")) {
@@ -2386,6 +2412,8 @@
                                 if (options.oneofs)
                                     object.event = "finding";
                             }
+                            if (message.resource != null && message.hasOwnProperty("resource"))
+                                object.resource = $root.google.cloud.securitycenter.v1.Resource.toObject(message.resource, options);
                             return object;
                         };
     
@@ -2401,6 +2429,282 @@
                         };
     
                         return NotificationMessage;
+                    })();
+    
+                    v1.Resource = (function() {
+    
+                        /**
+                         * Properties of a Resource.
+                         * @memberof google.cloud.securitycenter.v1
+                         * @interface IResource
+                         * @property {string|null} [name] Resource name
+                         * @property {string|null} [project] Resource project
+                         * @property {string|null} [projectDisplayName] Resource projectDisplayName
+                         * @property {string|null} [parent] Resource parent
+                         * @property {string|null} [parentDisplayName] Resource parentDisplayName
+                         */
+    
+                        /**
+                         * Constructs a new Resource.
+                         * @memberof google.cloud.securitycenter.v1
+                         * @classdesc Represents a Resource.
+                         * @implements IResource
+                         * @constructor
+                         * @param {google.cloud.securitycenter.v1.IResource=} [properties] Properties to set
+                         */
+                        function Resource(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * Resource name.
+                         * @member {string} name
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         */
+                        Resource.prototype.name = "";
+    
+                        /**
+                         * Resource project.
+                         * @member {string} project
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         */
+                        Resource.prototype.project = "";
+    
+                        /**
+                         * Resource projectDisplayName.
+                         * @member {string} projectDisplayName
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         */
+                        Resource.prototype.projectDisplayName = "";
+    
+                        /**
+                         * Resource parent.
+                         * @member {string} parent
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         */
+                        Resource.prototype.parent = "";
+    
+                        /**
+                         * Resource parentDisplayName.
+                         * @member {string} parentDisplayName
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         */
+                        Resource.prototype.parentDisplayName = "";
+    
+                        /**
+                         * Creates a new Resource instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {google.cloud.securitycenter.v1.IResource=} [properties] Properties to set
+                         * @returns {google.cloud.securitycenter.v1.Resource} Resource instance
+                         */
+                        Resource.create = function create(properties) {
+                            return new Resource(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified Resource message. Does not implicitly {@link google.cloud.securitycenter.v1.Resource.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {google.cloud.securitycenter.v1.IResource} message Resource message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Resource.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                            if (message.project != null && Object.hasOwnProperty.call(message, "project"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.project);
+                            if (message.projectDisplayName != null && Object.hasOwnProperty.call(message, "projectDisplayName"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.projectDisplayName);
+                            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+                                writer.uint32(/* id 4, wireType 2 =*/34).string(message.parent);
+                            if (message.parentDisplayName != null && Object.hasOwnProperty.call(message, "parentDisplayName"))
+                                writer.uint32(/* id 5, wireType 2 =*/42).string(message.parentDisplayName);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified Resource message, length delimited. Does not implicitly {@link google.cloud.securitycenter.v1.Resource.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {google.cloud.securitycenter.v1.IResource} message Resource message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Resource.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a Resource message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.securitycenter.v1.Resource} Resource
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Resource.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.securitycenter.v1.Resource();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.name = reader.string();
+                                    break;
+                                case 2:
+                                    message.project = reader.string();
+                                    break;
+                                case 3:
+                                    message.projectDisplayName = reader.string();
+                                    break;
+                                case 4:
+                                    message.parent = reader.string();
+                                    break;
+                                case 5:
+                                    message.parentDisplayName = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a Resource message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.securitycenter.v1.Resource} Resource
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Resource.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a Resource message.
+                         * @function verify
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        Resource.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                if (!$util.isString(message.name))
+                                    return "name: string expected";
+                            if (message.project != null && message.hasOwnProperty("project"))
+                                if (!$util.isString(message.project))
+                                    return "project: string expected";
+                            if (message.projectDisplayName != null && message.hasOwnProperty("projectDisplayName"))
+                                if (!$util.isString(message.projectDisplayName))
+                                    return "projectDisplayName: string expected";
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                if (!$util.isString(message.parent))
+                                    return "parent: string expected";
+                            if (message.parentDisplayName != null && message.hasOwnProperty("parentDisplayName"))
+                                if (!$util.isString(message.parentDisplayName))
+                                    return "parentDisplayName: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a Resource message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.securitycenter.v1.Resource} Resource
+                         */
+                        Resource.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.securitycenter.v1.Resource)
+                                return object;
+                            var message = new $root.google.cloud.securitycenter.v1.Resource();
+                            if (object.name != null)
+                                message.name = String(object.name);
+                            if (object.project != null)
+                                message.project = String(object.project);
+                            if (object.projectDisplayName != null)
+                                message.projectDisplayName = String(object.projectDisplayName);
+                            if (object.parent != null)
+                                message.parent = String(object.parent);
+                            if (object.parentDisplayName != null)
+                                message.parentDisplayName = String(object.parentDisplayName);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a Resource message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @static
+                         * @param {google.cloud.securitycenter.v1.Resource} message Resource
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        Resource.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.name = "";
+                                object.project = "";
+                                object.projectDisplayName = "";
+                                object.parent = "";
+                                object.parentDisplayName = "";
+                            }
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                object.name = message.name;
+                            if (message.project != null && message.hasOwnProperty("project"))
+                                object.project = message.project;
+                            if (message.projectDisplayName != null && message.hasOwnProperty("projectDisplayName"))
+                                object.projectDisplayName = message.projectDisplayName;
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                object.parent = message.parent;
+                            if (message.parentDisplayName != null && message.hasOwnProperty("parentDisplayName"))
+                                object.parentDisplayName = message.parentDisplayName;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this Resource to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.securitycenter.v1.Resource
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        Resource.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return Resource;
                     })();
     
                     v1.OrganizationSettings = (function() {
