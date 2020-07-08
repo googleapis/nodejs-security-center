@@ -43,7 +43,7 @@ function main(
         name: formattedConfigName,
         description: 'Updated config description',
         pubsubTopic: pubsubTopic,
-        streaming_config: {filter: 'state = "INACTIVE"'},
+        streamingConfig: {filter: 'state = "INACTIVE"'},
       },
     });
     console.log('notification config update succeeded: ', response);
