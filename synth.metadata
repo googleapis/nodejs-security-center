@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-security-center.git",
-        "sha": "d8477d26f7ffd65110db0e6c17b2b5a42e16449e"
+        "sha": "344c15b415f72a286a48559f38cc4150697d3531"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b759c563bacf9cd15749be4d2bdd276d3f48ee29",
-        "internalRef": "341102751"
+        "sha": "8d73f9486fc193a150f6c907dfb9f49431aff3ff",
+        "internalRef": "332497859"
       }
     },
     {
@@ -104,6 +104,7 @@
     "README.md",
     "api-extractor.json",
     "linkinator.config.json",
+    "package-lock.json.2716439027",
     "protos/google/cloud/securitycenter/v1/asset.proto",
     "protos/google/cloud/securitycenter/v1/finding.proto",
     "protos/google/cloud/securitycenter/v1/notification_config.proto",
@@ -136,6 +137,7 @@
     "protos/protos.json",
     "renovate.json",
     "samples/README.md",
+    "samples/package-lock.json.228309027",
     "src/index.ts",
     "src/v1/index.ts",
     "src/v1/security_center_client.ts",
