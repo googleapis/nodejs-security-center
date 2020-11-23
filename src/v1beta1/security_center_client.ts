@@ -2883,9 +2883,7 @@ export class SecurityCenterClient {
   listAssetsAsync(
     request?: protos.google.cloud.securitycenter.v1beta1.IListAssetsRequest,
     options?: CallOptions
-  ): AsyncIterable<
-    protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult
-  > {
+  ): AsyncIterable<protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult> {
     request = request || {};
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -2902,9 +2900,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['listAssets'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.IListAssetsResult>;
   }
   listFindings(
     request: protos.google.cloud.securitycenter.v1beta1.IListFindingsRequest,

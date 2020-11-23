@@ -2743,9 +2743,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['groupAssets'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1p1beta1.IGroupResult
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.IGroupResult>;
   }
   groupFindings(
     request: protos.google.cloud.securitycenter.v1p1beta1.IGroupFindingsRequest,
@@ -3276,9 +3274,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['groupFindings'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1p1beta1.IGroupResult
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.IGroupResult>;
   }
   listAssets(
     request: protos.google.cloud.securitycenter.v1p1beta1.IListAssetsRequest,
@@ -3824,9 +3820,7 @@ export class SecurityCenterClient {
   listAssetsAsync(
     request?: protos.google.cloud.securitycenter.v1p1beta1.IListAssetsRequest,
     options?: CallOptions
-  ): AsyncIterable<
-    protos.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse.IListAssetsResult
-  > {
+  ): AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse.IListAssetsResult> {
     request = request || {};
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -3843,9 +3837,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['listAssets'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse.IListAssetsResult
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse.IListAssetsResult>;
   }
   listFindings(
     request: protos.google.cloud.securitycenter.v1p1beta1.IListFindingsRequest,
@@ -4370,9 +4362,7 @@ export class SecurityCenterClient {
   listFindingsAsync(
     request?: protos.google.cloud.securitycenter.v1p1beta1.IListFindingsRequest,
     options?: CallOptions
-  ): AsyncIterable<
-    protos.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult
-  > {
+  ): AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult> {
     request = request || {};
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -4389,9 +4379,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['listFindings'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.IListFindingsResult>;
   }
   listNotificationConfigs(
     request: protos.google.cloud.securitycenter.v1p1beta1.IListNotificationConfigsRequest,
@@ -4584,9 +4572,7 @@ export class SecurityCenterClient {
   listNotificationConfigsAsync(
     request?: protos.google.cloud.securitycenter.v1p1beta1.IListNotificationConfigsRequest,
     options?: CallOptions
-  ): AsyncIterable<
-    protos.google.cloud.securitycenter.v1p1beta1.INotificationConfig
-  > {
+  ): AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.INotificationConfig> {
     request = request || {};
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -4603,9 +4589,7 @@ export class SecurityCenterClient {
       this.innerApiCalls['listNotificationConfigs'] as GaxCall,
       (request as unknown) as RequestType,
       callSettings
-    ) as AsyncIterable<
-      protos.google.cloud.securitycenter.v1p1beta1.INotificationConfig
-    >;
+    ) as AsyncIterable<protos.google.cloud.securitycenter.v1p1beta1.INotificationConfig>;
   }
   listSources(
     request: protos.google.cloud.securitycenter.v1p1beta1.IListSourcesRequest,
