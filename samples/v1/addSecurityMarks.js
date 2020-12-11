@@ -18,7 +18,7 @@
  * Demostrates adding security marks to an asset.
  */
 function main(assetName = 'full asset path to add marks to') {
-  // [START demo]
+  // [START demo]//  [START securitycenter_demo]
   // Imports the Google Cloud client library.
   const {SecurityCenterClient} = require('@google-cloud/security-center');
 
@@ -43,7 +43,7 @@ function main(assetName = 'full asset path to add marks to') {
     console.log('New marks: %', newMarks);
   }
   addSecurityMarks();
-  // [END demo]
+  // [END demo]//  [END securitycenter_demo]
 }
 
 main(...process.argv.slice(2));

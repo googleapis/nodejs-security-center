@@ -16,6 +16,7 @@
 
 /** Demonstrates listing findings by filtering on security marks. */
 function main(sourceName = 'YOUR_NUMERIC_ORG_ID') {
+  // [START securitycenter_demo]
   // [START demo]
   // Imports the Google Cloud client library.
   const {SecurityCenterClient} = require('@google-cloud/security-center');
@@ -44,6 +45,7 @@ function main(sourceName = 'YOUR_NUMERIC_ORG_ID') {
   }
   listFindingsWithSecurityMarks();
   // [END demo]
+  // [END securitycenter_demo]
 }
 
 main(...process.argv.slice(2));

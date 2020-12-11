@@ -18,6 +18,7 @@
  * Prints project assets for the organization as of yesterday.
  */
 function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
+  // [START securitycenter_demo]
   // [START demo]
   // Imports the Google Cloud client library.
   const {SecurityCenterClient} = require('@google-cloud/security-center');
@@ -59,6 +60,7 @@ function main(organizationId = 'YOUR_NUMERIC_ORG_ID') {
 
   listAssetsAtTime();
   // [END demo]
+  // [END securitycenter_demo]
 }
 
 main(...process.argv.slice(2));
