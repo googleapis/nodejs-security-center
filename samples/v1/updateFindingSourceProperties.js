@@ -18,7 +18,7 @@
  * Demonstrates how to update a security finding in CSCC.
  */
 function main(findingName = 'FULL_FINDING_PATH') {
-  // [START securitycenter_demo]
+  // [START securitycenter_update_finding_source_properties]
   // [START demo]
   // Imports the Google Cloud client library.
   const {SecurityCenterClient} = require('@google-cloud/security-center');
@@ -55,7 +55,7 @@ function main(findingName = 'FULL_FINDING_PATH') {
   }
   updateFinding();
   // [END demo]
-  // [END securitycenter_demo]
+  // [END securitycenter_update_finding_source_properties]
 }
 
 main(...process.argv.slice(2));
